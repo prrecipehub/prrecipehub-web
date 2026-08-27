@@ -1,1858 +1,2029 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PR Recipe Hub - #1 Indian Vegetarian Recipes & Meal Planner App</title>
-  <meta name="description" content="Discover 10,000+ authentic Indian vegetarian recipes, smart pantry matching, 19-language support, weekly meal planning, and step-by-step cooking timers — 100% Offline!">
-  <meta name="keywords" content="Indian recipes, veg recipes, pure vegetarian cooking, pantry matcher, meal planner, grocery list, paneer recipes, south indian, gujarati, recipes offline">
-  <link rel="icon" type="image/png" href="https://gausairavi.github.io/prrecipehub-web/app-logo.png">
-  <link rel="apple-touch-icon" href="https://gausairavi.github.io/prrecipehub-web/app-logo.png">
-  
-  <!-- OpenGraph / Social Meta Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="PR Recipe Hub - Authentic Indian Vegetarian Recipes & Meal Planner">
-  <meta property="og:description" content="Discover 10,000+ pure veg recipes, match ingredients from your pantry, and follow foolproof step-by-step cooking guides in 19 languages.">
-  <meta property="og:image" content="https://gausairavi.github.io/prrecipehub-web/app-logo.png">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR Recipe Hub - #1 Indian Vegetarian Recipes & Meal Planner App</title>
+    <meta name="description" content="Discover 1000+ authentic Indian vegetarian recipes, smart pantry matching, 19-language support, weekly meal planning, and step-by-step cooking timers!">
+    <meta name="keywords" content="Indian recipes, veg recipes, pure vegetarian cooking, pantry matcher, meal planner, grocery list, paneer recipes, south indian, gujarati">
+    <link rel="icon" type="image/png" href="https://prrecipehub.com/app-logo.png">
+    <link rel="apple-touch-icon" href="https://prrecipehub.com/app-logo.png">
 
-  <style>
-    :root {
-      --primary: #FF6D00;
-      --primary-hover: #E65100;
-      --primary-glow: rgba(255, 109, 0, 0.35);
-      --secondary: #2E7D32;
-      --secondary-light: #4CAF50;
-      --accent: #FFB300;
-      
-      /* Dark Theme Default */
-      --bg: #0B0F17;
-      --bg-surface: #121824;
-      --bg-card: rgba(22, 30, 46, 0.75);
-      --bg-card-hover: rgba(28, 39, 60, 0.9);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-focus: rgba(255, 109, 0, 0.4);
-      --text: #F8FAFC;
-      --text-muted: #94A3B8;
-      --text-secondary: #CBD5E1;
-      --glass: rgba(18, 24, 36, 0.85);
-      --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-      --badge-bg: rgba(255, 109, 0, 0.12);
-      --badge-text: #FF9100;
-    }
+    <!-- OpenGraph / Social Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PR Recipe Hub - Authentic Indian Vegetarian Recipes & Meal Planner">
+    <meta property="og:description" content="Discover 1000+ pure veg recipes, match ingredients from your pantry, and follow foolproof step-by-step cooking guides in 19 languages.">
+    <meta property="og:image" content="https://prrecipehub.com/app-logo.png">
 
-    html.light {
-      --bg: #F8FAFC;
-      --bg-surface: #FFFFFF;
-      --bg-card: rgba(255, 255, 255, 0.9);
-      --bg-card-hover: #FFFFFF;
-      --border: rgba(0, 0, 0, 0.08);
-      --border-focus: rgba(255, 109, 0, 0.5);
-      --text: #0F172A;
-      --text-muted: #64748B;
-      --text-secondary: #334155;
-      --glass: rgba(255, 255, 255, 0.9);
-      --shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
-      --badge-bg: rgba(255, 109, 0, 0.1);
-      --badge-text: #E65100;
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
-    }
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    h1, h2, h3, h4, .font-heading {
-      font-family: 'Outfit', sans-serif;
-    }
+    <style>
+        :root {
+            --primary: #FF6D00;
+            --primary-hover: #E65100;
+            --primary-glow: rgba(255, 109, 0, 0.35);
+            --secondary: #2E7D32;
+            --secondary-light: #4CAF50;
+            --accent: #FFB300;
+            /* Dark Theme Default */
+            --bg: #0B0F17;
+            --bg-surface: #121824;
+            --bg-card: rgba(22, 30, 46, 0.75);
+            --bg-card-hover: rgba(28, 39, 60, 0.9);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-focus: rgba(255, 109, 0, 0.4);
+            --text: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-secondary: #CBD5E1;
+            --glass: rgba(18, 24, 36, 0.85);
+            --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+            --badge-bg: rgba(255, 109, 0, 0.12);
+            --badge-text: #FF9100;
+        }
 
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
+        html.light {
+            --bg: #F8FAFC;
+            --bg-surface: #FFFFFF;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card-hover: #FFFFFF;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-focus: rgba(255, 109, 0, 0.5);
+            --text: #0F172A;
+            --text-muted: #64748B;
+            --text-secondary: #334155;
+            --glass: rgba(255, 255, 255, 0.9);
+            --shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+            --badge-bg: rgba(255, 109, 0, 0.1);
+            --badge-text: #E65100;
+        }
 
-    /* Ambient Background Glows */
-    .glow-sphere-1 {
-      position: fixed;
-      top: -150px;
-      left: -150px;
-      width: 550px;
-      height: 550px;
-      background: radial-gradient(circle, rgba(255, 109, 0, 0.18) 0%, rgba(255, 109, 0, 0) 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .glow-sphere-2 {
-      position: fixed;
-      bottom: -200px;
-      right: -200px;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, rgba(46, 125, 50, 0.15) 0%, rgba(46, 125, 50, 0) 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+        }
 
-    .container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 24px;
-      position: relative;
-      z-index: 1;
-    }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
 
-    /* ── Header & Navigation ─────────────────────────────────────────────────── */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-    }
-    .brand-logo {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      transition: transform 0.25s ease;
-    }
-    .brand-logo:hover {
-      transform: scale(1.04);
-    }
-    .header-logo-img {
-      height: 56px;
-      width: auto;
-      max-width: 180px;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 14px rgba(255, 109, 0, 0.28));
-      border-radius: 50%;
-      background: #FFF;
-      padding: 2px;
-    }
-    .footer-logo-img {
-      height: 68px;
-      width: auto;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #FFF;
-      padding: 3px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      margin-bottom: 16px;
-    }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-weight: 600;
-      font-size: 15px;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .theme-toggle-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      color: var(--text);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-    .theme-toggle-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
-      color: #FFF !important;
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      box-shadow: 0 10px 22px var(--primary-glow);
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(255, 109, 0, 0.45);
-    }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--bg-surface);
-      color: var(--text) !important;
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover {
-      border-color: var(--primary);
-      background: var(--bg-card);
-      transform: translateY(-2px);
-    }
+        /* Ambient Background Glows */
+        .glow-sphere-1 {
+            position: fixed;
+            top: -150px;
+            left: -150px;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(255, 109, 0, 0.18) 0%, rgba(255, 109, 0, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    /* ── Hero Section ─────────────────────────────────────────────────────────── */
-    .hero-section {
-      padding: 70px 0 90px;
-      position: relative;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .pill-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--badge-bg);
-      color: var(--badge-text);
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 13.5px;
-      margin-bottom: 24px;
-      border: 1px solid rgba(255, 109, 0, 0.25);
-    }
-    .hero-title {
-      font-size: 52px;
-      font-weight: 900;
-      line-height: 1.12;
-      letter-spacing: -1.5px;
-      margin-bottom: 20px;
-    }
-    .hero-title .gradient-text {
-      background: linear-gradient(135deg, #FF9100 0%, #FF3D00 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-desc {
-      font-size: 18.5px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 36px;
-      max-width: 580px;
-    }
-    .hero-cta-row {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-    .store-badge-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      background: #000;
-      color: #FFF;
-      padding: 10px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.15);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .store-badge-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.4);
-      border-color: var(--primary);
-    }
-    .store-badge-btn i {
-      font-size: 26px;
-      color: #FFB300;
-    }
-    .store-badge-btn .badge-sub {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      opacity: 0.8;
-    }
-    .store-badge-btn .badge-main {
-      font-size: 16px;
-      font-weight: 700;
-    }
-    
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      border-top: 1px solid var(--border);
-      padding-top: 30px;
-    }
-    .stat-item h3 {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .stat-item p {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
+        .glow-sphere-2 {
+            position: fixed;
+            bottom: -200px;
+            right: -200px;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(46, 125, 50, 0.15) 0%, rgba(46, 125, 50, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    /* ── Phone Mockup / Hero Showcase ────────────────────────────────────────── */
-    .hero-phone-wrap {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-    .phone-frame {
-      width: 320px;
-      height: 640px;
-      background: #000;
-      border-radius: 48px;
-      border: 10px solid #1E293B;
-      box-shadow: 0 30px 60px -15px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.1);
-      position: relative;
-      overflow: hidden;
-    }
-    .phone-screen {
-      width: 100%;
-      height: 100%;
-      background: #0B0F17;
-      overflow-y: auto;
-      scrollbar-width: none;
-    }
-    .phone-screen::-webkit-scrollbar {
-      display: none;
-    }
-    .phone-notch {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 130px;
-      height: 22px;
-      background: #1E293B;
-      border-bottom-left-radius: 16px;
-      border-bottom-right-radius: 16px;
-      z-index: 10;
-    }
-    .floating-card-badge {
-      position: absolute;
-      background: var(--glass);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
-      padding: 12px 18px;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      animation: float 4s ease-in-out infinite;
-      z-index: 20;
-    }
-    .float-card-1 {
-      top: 12%;
-      left: -40px;
-    }
-    .float-card-2 {
-      bottom: 18%;
-      right: -35px;
-      animation-delay: 2s;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
 
-    /* ── Section Headers ─────────────────────────────────────────────────────── */
-    .section-title-wrap {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 56px;
-    }
-    .section-tag {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: 38px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 16px;
-    }
-    .section-desc {
-      font-size: 17px;
-      color: var(--text-muted);
-    }
+        /* ── Header & Navigation ─────────────────────────────────────────────────── */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
 
-    /* ── Interactive Live Demos Section ──────────────────────────────────────── */
-    .interactive-section {
-      padding: 80px 0;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .demo-tab-nav {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-    .demo-tab-btn {
-      padding: 12px 24px;
-      border-radius: 30px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-weight: 700;
-      font-size: 15px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s;
-    }
-    .demo-tab-btn.active {
-      background: var(--primary);
-      color: #FFF;
-      border-color: var(--primary);
-      box-shadow: 0 8px 20px var(--primary-glow);
-    }
-    .demo-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 36px;
-      box-shadow: var(--shadow);
-    }
-    .demo-tab-content {
-      display: none;
-    }
-    .demo-tab-content.active {
-      display: block;
-      animation: fadeIn 0.35s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        .nav-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
 
-    /* Pantry Simulator UI */
-    .pantry-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-    }
-    .pantry-chips-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .pantry-chip {
-      padding: 10px 18px;
-      border-radius: 12px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      user-select: none;
-      transition: all 0.2s;
-    }
-    .pantry-chip.selected {
-      background: rgba(255, 109, 0, 0.18);
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-    .recipe-match-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px;
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      margin-bottom: 14px;
-      transition: transform 0.2s;
-    }
-    .recipe-match-card:hover {
-      transform: translateX(6px);
-      border-color: var(--primary);
-    }
-    .match-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 12px;
-      object-fit: cover;
-    }
-    .match-percent {
-      font-size: 12px;
-      font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: rgba(46, 125, 50, 0.18);
-      color: var(--secondary-light);
-      display: inline-block;
-      margin-top: 4px;
-    }
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.25s ease;
+        }
 
-    /* Language Switcher Demo */
-    .lang-btn-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-    .lang-pill-btn {
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 13.5px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      justify-content: center;
-    }
-    .lang-pill-btn.active {
-      background: var(--primary);
-      color: #FFF;
-      border-color: var(--primary);
-    }
-    .recipe-demo-box {
-      background: var(--bg-surface);
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      padding: 28px;
-    }
-    .step-demo-row {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 14px;
-      padding: 14px;
-      background: var(--bg);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-    .step-badge-num {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #FFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
+            .brand-logo:hover {
+                transform: scale(1.04);
+            }
 
-    /* ── Features Grid ───────────────────────────────────────────────────────── */
-    .features-section {
-      padding: 90px 0;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .feature-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 32px;
-      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .feature-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border-focus);
-      box-shadow: var(--shadow);
-    }
-    .feature-icon-box {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      background: var(--badge-bg);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 22px;
-    }
-    .feature-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .feature-card p {
-      color: var(--text-muted);
-      font-size: 15px;
-      line-height: 1.6;
-    }
+        .header-logo-img {
+            height: 56px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 14px rgba(255, 109, 0, 0.28));
+            border-radius: 50%;
+            background: #FFF;
+            padding: 2px;
+        }
 
-    /* ── Categories Grid Showcase ────────────────────────────────────────────── */
-    .categories-section {
-      padding: 90px 0;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-    }
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .category-card {
-      border-radius: 20px;
-      overflow: hidden;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--text);
-      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-    }
-    .category-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-      box-shadow: var(--shadow);
-    }
-    .cat-img-wrap {
-      width: 100%;
-      height: 160px;
-      position: relative;
-      overflow: hidden;
-    }
-    .cat-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .category-card:hover .cat-img-wrap img {
-      transform: scale(1.08);
-    }
-    .cat-content {
-      padding: 18px 20px;
-    }
-    .cat-count {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-    }
-    .cat-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin: 4px 0 6px;
-    }
-    .cat-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
+        .footer-logo-img {
+            height: 68px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #FFF;
+            padding: 3px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            margin-bottom: 16px;
+        }
 
-    /* ── Testimonials ────────────────────────────────────────────────────────── */
-    .testimonials-section {
-      padding: 90px 0;
-    }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .testi-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .testi-stars {
-      color: #FFB300;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-    .testi-text {
-      font-size: 15.5px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-    .testi-user {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .user-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary) 0%, #FF9100 100%);
-      color: #FFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 16px;
-    }
-    .user-name {
-      font-weight: 700;
-      font-size: 15px;
-    }
-    .user-sub {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
 
-    /* ── FAQ Accordion ───────────────────────────────────────────────────────── */
-    .faq-section {
-      padding: 80px 0;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-    }
-    .faq-accordion {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
-    .faq-question {
-      padding: 22px 26px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 17px;
-    }
-    .faq-question i {
-      transition: transform 0.25s;
-    }
-    .faq-item.active .faq-question i {
-      transform: rotate(180deg);
-      color: var(--primary);
-    }
-    .faq-answer {
-      padding: 0 26px 22px;
-      color: var(--text-muted);
-      font-size: 15.5px;
-      line-height: 1.65;
-      display: none;
-    }
-    .faq-item.active .faq-answer {
-      display: block;
-    }
+            .nav-links a {
+                text-decoration: none;
+                color: var(--text-secondary);
+                font-weight: 600;
+                font-size: 15px;
+                transition: color 0.2s;
+            }
 
-    /* ── Download CTA Banner ─────────────────────────────────────────────────── */
-    .download-cta-section {
-      padding: 90px 0;
-    }
-    .cta-banner {
-      background: linear-gradient(135deg, #FF6D00 0%, #E65100 50%, #BF360C 100%);
-      border-radius: 32px;
-      padding: 60px 48px;
-      color: #FFF;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 40px;
-      box-shadow: 0 25px 50px -12px rgba(255, 109, 0, 0.45);
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-banner h2 {
-      font-size: 40px;
-      font-weight: 900;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .cta-banner p {
-      font-size: 17.5px;
-      opacity: 0.95;
-      margin-bottom: 32px;
-      max-width: 500px;
-    }
-    .cta-btns {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+                .nav-links a:hover {
+                    color: var(--primary);
+                }
 
-    /* ── Footer ──────────────────────────────────────────────────────────────── */
-    footer {
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      padding: 60px 0 30px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 48px;
-    }
-    .footer-col h4 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .footer-links {
-      list-style: none;
-    }
-    .footer-links li {
-      margin-bottom: 12px;
-    }
-    .footer-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 14.5px;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover {
-      color: var(--primary);
-    }
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text-muted);
-      font-size: 13.5px;
-    }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
 
-    /* Responsive Queries */
-    @media (max-width: 1024px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-desc { margin: 0 auto 36px; }
-      .hero-cta-row { justify-content: center; }
-      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .categories-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .cta-banner { grid-template-columns: 1fr; text-align: center; }
-      .cta-banner p { margin: 0 auto 32px; }
-      .cta-btns { justify-content: center; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .hero-title { font-size: 38px; }
-      .features-grid { grid-template-columns: 1fr; }
-      .categories-grid { grid-template-columns: 1fr; }
-      .pantry-grid { grid-template-columns: 1fr; }
-      .stats-row { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 12px; }
-    }
-  </style>
+        .theme-toggle-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+            .theme-toggle-btn:hover {
+                border-color: var(--primary);
+                color: var(--primary);
+            }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            color: #FFF !important;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            box-shadow: 0 10px 22px var(--primary-glow);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 14px 28px rgba(255, 109, 0, 0.45);
+            }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-surface);
+            color: var(--text) !important;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+            .btn-secondary:hover {
+                border-color: var(--primary);
+                background: var(--bg-card);
+                transform: translateY(-2px);
+            }
+
+        /* ── Hero Section ─────────────────────────────────────────────────────────── */
+        .hero-section {
+            padding: 70px 0 90px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 13.5px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 109, 0, 0.25);
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+            .hero-title .gradient-text {
+                background: linear-gradient(135deg, #FF9100 0%, #FF3D00 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        .hero-desc {
+            font-size: 18.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 36px;
+            max-width: 580px;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .store-badge-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: #000;
+            color: #FFF;
+            padding: 10px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+            .store-badge-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+                border-color: var(--primary);
+            }
+
+            .store-badge-btn i {
+                font-size: 26px;
+                color: #FFB300;
+            }
+
+            .store-badge-btn .badge-sub {
+                font-size: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                opacity: 0.8;
+            }
+
+            .store-badge-btn .badge-main {
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            border-top: 1px solid var(--border);
+            padding-top: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-item p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ── Phone Mockup / Hero Showcase ────────────────────────────────────────── */
+        .hero-phone-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-frame {
+            width: 320px;
+            height: 640px;
+            background: #000;
+            border-radius: 48px;
+            border: 10px solid #1E293B;
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #0B0F17;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+            .phone-screen::-webkit-scrollbar {
+                display: none;
+            }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 22px;
+            background: #1E293B;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 10;
+        }
+
+        .floating-card-badge {
+            position: absolute;
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            padding: 12px 18px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 4s ease-in-out infinite;
+            z-index: 20;
+        }
+
+        .float-card-1 {
+            top: 12%;
+            left: -40px;
+        }
+
+        .float-card-2 {
+            bottom: 18%;
+            right: -35px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ── Section Headers ─────────────────────────────────────────────────────── */
+        .section-title-wrap {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            font-size: 17px;
+            color: var(--text-muted);
+        }
+
+        /* ── Interactive Live Demos Section ──────────────────────────────────────── */
+        .interactive-section {
+            padding: 80px 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .demo-tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .demo-tab-btn {
+            padding: 12px 24px;
+            border-radius: 30px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+            .demo-tab-btn.active {
+                background: var(--primary);
+                color: #FFF;
+                border-color: var(--primary);
+                box-shadow: 0 8px 20px var(--primary-glow);
+            }
+
+        .demo-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 36px;
+            box-shadow: var(--shadow);
+        }
+
+        .demo-tab-content {
+            display: none;
+        }
+
+            .demo-tab-content.active {
+                display: block;
+                animation: fadeIn 0.35s ease;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Pantry Simulator UI */
+        .pantry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .pantry-chips-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .pantry-chip {
+            padding: 10px 18px;
+            border-radius: 12px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            user-select: none;
+            transition: all 0.2s;
+        }
+
+            .pantry-chip.selected {
+                background: rgba(255, 109, 0, 0.18);
+                border-color: var(--primary);
+                color: var(--primary);
+            }
+
+        .recipe-match-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 20px;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 14px;
+            transition: transform 0.2s;
+        }
+
+            .recipe-match-card:hover {
+                transform: translateX(6px);
+                border-color: var(--primary);
+            }
+
+        .match-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .match-percent {
+            font-size: 12px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(46, 125, 50, 0.18);
+            color: var(--secondary-light);
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        /* Language Switcher Demo */
+        .lang-btn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .lang-pill-btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+            .lang-pill-btn.active {
+                background: var(--primary);
+                color: #FFF;
+                border-color: var(--primary);
+            }
+
+        .recipe-demo-box {
+            background: var(--bg-surface);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            padding: 28px;
+        }
+
+        .step-demo-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 14px;
+            padding: 14px;
+            background: var(--bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .step-badge-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* ── Features Grid ───────────────────────────────────────────────────────── */
+        .features-section {
+            padding: 90px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 32px;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-6px);
+                border-color: var(--border-focus);
+                box-shadow: var(--shadow);
+            }
+
+        .feature-icon-box {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: var(--badge-bg);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 22px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ── Categories Grid Showcase ────────────────────────────────────────────── */
+        .categories-section {
+            padding: 90px 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .category-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+        }
+
+            .category-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--primary);
+                box-shadow: var(--shadow);
+            }
+
+        .cat-img-wrap {
+            width: 100%;
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .cat-img-wrap img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.4s ease;
+            }
+
+        .category-card:hover .cat-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .cat-content {
+            padding: 18px 20px;
+        }
+
+        .cat-count {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .cat-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin: 4px 0 6px;
+        }
+
+        .cat-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ── Testimonials ────────────────────────────────────────────────────────── */
+        .testimonials-section {
+            padding: 90px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .testi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testi-stars {
+            color: #FFB300;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .testi-text {
+            font-size: 15.5px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .testi-user {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .user-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, #FF9100 100%);
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .user-name {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .user-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* ── FAQ Accordion ───────────────────────────────────────────────────────── */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 22px 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+            .faq-question i {
+                transition: transform 0.25s;
+            }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 26px 22px;
+            color: var(--text-muted);
+            font-size: 15.5px;
+            line-height: 1.65;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* ── Download CTA Banner ─────────────────────────────────────────────────── */
+        .download-cta-section {
+            padding: 90px 0;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #FF6D00 0%, #E65100 50%, #BF360C 100%);
+            border-radius: 32px;
+            padding: 60px 48px;
+            color: #FFF;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 25px 50px -12px rgba(255, 109, 0, 0.45);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .cta-banner h2 {
+                font-size: 40px;
+                font-weight: 900;
+                margin-bottom: 16px;
+                line-height: 1.2;
+            }
+
+            .cta-banner p {
+                font-size: 17.5px;
+                opacity: 0.95;
+                margin-bottom: 32px;
+                max-width: 500px;
+            }
+
+        .cta-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ── Footer ──────────────────────────────────────────────────────────────── */
+        footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+
+            .footer-links a {
+                text-decoration: none;
+                color: var(--text-muted);
+                font-size: 14.5px;
+                transition: color 0.2s;
+            }
+
+                .footer-links a:hover {
+                    color: var(--primary);
+                }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 13.5px;
+        }
+
+        /* Responsive Queries */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-desc {
+                margin: 0 auto 36px;
+            }
+
+            .hero-cta-row {
+                justify-content: center;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-banner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+                .cta-banner p {
+                    margin: 0 auto 32px;
+                }
+
+            .cta-btns {
+                justify-content: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pantry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Ambient Glow Effects -->
-  <div class="glow-sphere-1"></div>
-  <div class="glow-sphere-2"></div>
+    <!-- Ambient Glow Effects -->
+    <div class="glow-sphere-1"></div>
+    <div class="glow-sphere-2"></div>
 
-  <!-- Header Navigation -->
-  <header>
-    <div class="container nav-wrap">
-      <a href="#" class="brand-logo" title="PR Recipe Hub">
-        <img src="https://gausairavi.github.io/prrecipehub-web/app-logo.png" alt="PR Recipe Hub Logo" class="header-logo-img">
-      </a>
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-wrap">
+            <a href="#" class="brand-logo" title="PR Recipe Hub">
+                <img src="https://prrecipehub.com/app-logo.png" alt="PR Recipe Hub Logo" class="header-logo-img">
+            </a>
 
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#interactive-demo">Interactive Demo</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#languages">19 Languages</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#interactive-demo">Interactive Demo</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#languages">19 Languages</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
 
-      <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-          <i class="fa-solid fa-sun" id="themeIcon"></i>
-        </button>
-        <a href="#download" class="btn-primary">
-          <i class="fa-brands fa-google-play"></i> Get App Free
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container hero-grid">
-      <div>
-        <div class="pill-badge">
-          <i class="fa-solid fa-leaf"></i> #1 Pure Vegetarian Indian Recipe Companion
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun" id="themeIcon"></i>
+                </button>
+                <a href="#download" class="btn-primary">
+                    <i class="fa-brands fa-google-play"></i> Get App Free
+                </a>
+            </div>
         </div>
-        <h1 class="hero-title">
-          Master Authentic Indian Cooking. <br>
-          <span class="gradient-text">100% Offline.</span>
-        </h1>
-        <p class="hero-desc">
-          Discover 10,000+ foolproof step-by-step vegetarian recipes, instant pantry ingredient matching, weekly meal planning, and native cooking guides in 19 Indian and global languages.
-        </p>
+    </header>
 
-        <div class="hero-cta-row">
-          <a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener" class="store-badge-btn">
-            <i class="fa-brands fa-google-play"></i>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-grid">
             <div>
-              <div class="badge-sub">GET IT ON</div>
-              <div class="badge-main">Google Play</div>
-            </div>
-          </a>
-          <a href="#interactive-demo" class="btn-secondary">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> Try Live Demo
-          </a>
-        </div>
-
-        <div class="stats-row">
-          <div class="stat-item">
-            <h3>10,000+</h3>
-            <p>Pure Veg Recipes</p>
-          </div>
-          <div class="stat-item">
-            <h3>19</h3>
-            <p>Native Languages</p>
-          </div>
-          <div class="stat-item">
-            <h3>100%</h3>
-            <p>Offline Ready</p>
-          </div>
-          <div class="stat-item">
-            <h3>4.9 ★</h3>
-            <p>Cook Rating</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Phone Mockup Preview -->
-      <div class="hero-phone-wrap">
-        <div class="floating-card-badge float-card-1">
-          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(46,125,50,0.2); color: #4CAF50; display:flex; align-items:center; justify-content:center;">
-            <i class="fa-solid fa-bolt"></i>
-          </div>
-          <div>
-            <div style="font-size: 13px; font-weight: 800;">Pantry Matcher</div>
-            <div style="font-size: 11px; color: var(--text-muted);">98% Match Found</div>
-          </div>
-        </div>
-
-        <div class="floating-card-badge float-card-2">
-          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(255,109,0,0.2); color: #FF6D00; display:flex; align-items:center; justify-content:center;">
-            <i class="fa-solid fa-stopwatch"></i>
-          </div>
-          <div>
-            <div style="font-size: 13px; font-weight: 800;">Cooking Mode</div>
-            <div style="font-size: 11px; color: var(--text-muted);">Step 3/10 Active</div>
-          </div>
-        </div>
-
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/paneer-butter-masala.jpg" style="width: 100%; height: 230px; object-fit: cover;" alt="Paneer Butter Masala">
-            <div style="padding: 18px;">
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
-                <span style="font-size: 11px; font-weight: 800; color: #FF6D00; background: rgba(255,109,0,0.15); padding: 3px 8px; border-radius: 6px;">MAIN COURSE</span>
-                <span style="font-size: 12px; color: #FFB300;">★ 4.9 (1,420)</span>
-              </div>
-              <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 6px;">Paneer Butter Masala</h3>
-              <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">Rich, velvety restaurant-style tomato cashew curry with soft paneer cubes.</p>
-              
-              <div style="background: var(--bg-surface); padding: 12px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 14px;">
-                <div style="font-size: 12px; font-weight: 700; margin-bottom: 6px;">⏱ Prep: 15m | Cook: 25m | Servings: 4</div>
-                <div style="display:flex; gap: 6px; flex-wrap: wrap;">
-                  <span style="font-size: 10px; background: rgba(46,125,50,0.15); color: #4CAF50; padding: 2px 6px; border-radius: 4px;">High Protein</span>
-                  <span style="font-size: 10px; background: var(--border); padding: 2px 6px; border-radius: 4px;">Gluten-Free</span>
+                <div class="pill-badge">
+                    <i class="fa-solid fa-leaf"></i> #1 Pure Vegetarian Indian Recipe Companion
                 </div>
-              </div>
+                <h1 class="hero-title">
+                    Master Authentic Indian Cooking. <br>
+                    <span class="gradient-text">Pure Vegetarian.</span>
+                </h1>
+                <p class="hero-desc">
+                    Discover 1000+ foolproof step-by-step vegetarian recipes, instant pantry ingredient matching, weekly meal planning, and native cooking guides in 19 Indian and global languages.
+                </p>
 
-              <div style="font-size: 13px; font-weight: 800; margin-bottom: 8px;">10 Step Instructions:</div>
-              <div style="display:flex; gap: 8px; font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">
-                <span style="background: #FF6D00; color:#fff; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:800;">1</span>
-                <span>Cut 300g fresh paneer into cubes & soak in warm water...</span>
-              </div>
-              <div style="display:flex; gap: 8px; font-size: 11px; color: var(--text-secondary);">
-                <span style="background: #FF6D00; color:#fff; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:800;">2</span>
-                <span>Boil tomatoes, onions, cashews & whole spices...</span>
-              </div>
+                <div class="hero-cta-row">
+                    <a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener" class="store-badge-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div>
+                            <div class="badge-sub">GET IT ON</div>
+                            <div class="badge-main">Google Play</div>
+                        </div>
+                    </a>
+                    <a href="#interactive-demo" class="btn-secondary">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Try Live Demo
+                    </a>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>Pure Veg Recipes</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>19</h3>
+                        <p>Native Languages</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Pure Vegetarian</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9 ★</h3>
+                        <p>Cook Rating</p>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <!-- Phone Mockup Preview -->
+            <div class="hero-phone-wrap">
+                <div class="floating-card-badge float-card-1">
+                    <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(46,125,50,0.2); color: #4CAF50; display:flex; align-items:center; justify-content:center;">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <div style="font-size: 13px; font-weight: 800;">Pantry Matcher</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">98% Match Found</div>
+                    </div>
+                </div>
+
+                <div class="floating-card-badge float-card-2">
+                    <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(255,109,0,0.2); color: #FF6D00; display:flex; align-items:center; justify-content:center;">
+                        <i class="fa-solid fa-stopwatch"></i>
+                    </div>
+                    <div>
+                        <div style="font-size: 13px; font-weight: 800;">Cooking Mode</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">Step 3/10 Active</div>
+                    </div>
+                </div>
+
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/lunch/paneer-butter-masala.jpg" style="width: 100%; height: 230px; object-fit: cover;" alt="Paneer Butter Masala">
+                        <div style="padding: 18px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+                                <span style="font-size: 11px; font-weight: 800; color: #FF6D00; background: rgba(255,109,0,0.15); padding: 3px 8px; border-radius: 6px;">MAIN COURSE</span>
+                                <span style="font-size: 12px; color: #FFB300;">★ 4.9 (1,420)</span>
+                            </div>
+                            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 6px;">Paneer Butter Masala</h3>
+                            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4; margin-bottom: 14px;">Rich, velvety restaurant-style tomato cashew curry with soft paneer cubes.</p>
+
+                            <div style="background: var(--bg-surface); padding: 12px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 14px;">
+                                <div style="font-size: 12px; font-weight: 700; margin-bottom: 6px;">⏱ Prep: 15m | Cook: 25m | Servings: 4</div>
+                                <div style="display:flex; gap: 6px; flex-wrap: wrap;">
+                                    <span style="font-size: 10px; background: rgba(46,125,50,0.15); color: #4CAF50; padding: 2px 6px; border-radius: 4px;">High Protein</span>
+                                    <span style="font-size: 10px; background: var(--border); padding: 2px 6px; border-radius: 4px;">Gluten-Free</span>
+                                </div>
+                            </div>
+
+                            <div style="font-size: 13px; font-weight: 800; margin-bottom: 8px;">10 Step Instructions:</div>
+                            <div style="display:flex; gap: 8px; font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">
+                                <span style="background: #FF6D00; color:#fff; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:800;">1</span>
+                                <span>Cut 300g fresh paneer into cubes & soak in warm water...</span>
+                            </div>
+                            <div style="display:flex; gap: 8px; font-size: 11px; color: var(--text-secondary);">
+                                <span style="background: #FF6D00; color:#fff; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:800;">2</span>
+                                <span>Boil tomatoes, onions, cashews & whole spices...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Interactive Live Demos Section -->
-  <section id="interactive-demo" class="interactive-section">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="section-tag">Hands-On Experience</span>
-        <h2 class="section-title">Try PR Recipe Hub Features Right Here</h2>
-        <p class="section-desc">Experience our smart pantry matcher and instant 19-language recipe translation live in your browser.</p>
-      </div>
-
-      <!-- Demo Tabs -->
-      <div class="demo-tab-nav">
-        <button class="demo-tab-btn active" onclick="switchDemoTab('pantry')">
-          <i class="fa-solid fa-basket-shopping"></i> Smart Pantry Matcher
-        </button>
-        <button class="demo-tab-btn" onclick="switchDemoTab('language')">
-          <i class="fa-solid fa-language"></i> 19-Language Live Switcher
-        </button>
-        <button class="demo-tab-btn" onclick="switchDemoTab('cooking')">
-          <i class="fa-solid fa-kitchen-set"></i> Guided Cooking & Timer
-        </button>
-      </div>
-
-      <!-- Tab 1: Pantry Matcher Demo -->
-      <div id="pantry-demo" class="demo-container demo-tab-content active">
-        <div class="pantry-grid">
-          <div>
-            <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Select Kitchen Ingredients</h3>
-            <p style="font-size: 14.5px; color: var(--text-muted); margin-bottom: 16px;">
-              Tap items you currently have in your fridge or pantry:
-            </p>
-            <div class="pantry-chips-wrap">
-              <div class="pantry-chip selected" onclick="toggleChip(this, 'paneer')"><i class="fa-solid fa-cheese"></i> Fresh Paneer</div>
-              <div class="pantry-chip selected" onclick="toggleChip(this, 'tomato')"><i class="fa-solid fa-apple-whole"></i> Tomatoes</div>
-              <div class="pantry-chip selected" onclick="toggleChip(this, 'peas')"><i class="fa-solid fa-seedling"></i> Green Peas</div>
-              <div class="pantry-chip" onclick="toggleChip(this, 'potato')"><i class="fa-solid fa-egg"></i> Potatoes</div>
-              <div class="pantry-chip" onclick="toggleChip(this, 'cauliflower')"><i class="fa-solid fa-cloud"></i> Cauliflower</div>
-              <div class="pantry-chip" onclick="toggleChip(this, 'rice')"><i class="fa-solid fa-bowl-rice"></i> Basmati Rice</div>
-              <div class="pantry-chip" onclick="toggleChip(this, 'besan')"><i class="fa-solid fa-wheat-awn"></i> Gram Flour (Besan)</div>
-              <div class="pantry-chip" onclick="toggleChip(this, 'palak')"><i class="fa-solid fa-leaf"></i> Fresh Spinach (Palak)</div>
-            </div>
-          </div>
-
-          <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px;">
-              <h3 style="font-size: 22px; font-weight: 800;">Matched Recipes</h3>
-              <span id="matchedCountBadge" style="font-size: 12px; font-weight: 700; background: var(--badge-bg); color: var(--primary); padding: 4px 12px; border-radius: 20px;">3 Recipes Found</span>
+    <!-- Interactive Live Demos Section -->
+    <section id="interactive-demo" class="interactive-section">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag">Hands-On Experience</span>
+                <h2 class="section-title">Try PR Recipe Hub Features Right Here</h2>
+                <p class="section-desc">Experience our smart pantry matcher and instant 19-language recipe translation live in your browser.</p>
             </div>
 
-            <div id="matchedRecipesList">
+            <!-- Demo Tabs -->
+            <div class="demo-tab-nav">
+                <button class="demo-tab-btn active" onclick="switchDemoTab('pantry')">
+                    <i class="fa-solid fa-basket-shopping"></i> Smart Pantry Matcher
+                </button>
+                <button class="demo-tab-btn" onclick="switchDemoTab('language')">
+                    <i class="fa-solid fa-language"></i> 19-Language Live Switcher
+                </button>
+                <button class="demo-tab-btn" onclick="switchDemoTab('cooking')">
+                    <i class="fa-solid fa-kitchen-set"></i> Guided Cooking & Timer
+                </button>
+            </div>
+
+            <!-- Tab 1: Pantry Matcher Demo -->
+            <div id="pantry-demo" class="demo-container demo-tab-content active">
+                <div class="pantry-grid">
+                    <div>
+                        <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Select Kitchen Ingredients</h3>
+                        <p style="font-size: 14.5px; color: var(--text-muted); margin-bottom: 16px;">
+                            Tap items you currently have in your fridge or pantry:
+                        </p>
+                        <div class="pantry-chips-wrap">
+                            <div class="pantry-chip selected" onclick="toggleChip(this, 'paneer')"><i class="fa-solid fa-cheese"></i> Fresh Paneer</div>
+                            <div class="pantry-chip selected" onclick="toggleChip(this, 'tomato')"><i class="fa-solid fa-apple-whole"></i> Tomatoes</div>
+                            <div class="pantry-chip selected" onclick="toggleChip(this, 'peas')"><i class="fa-solid fa-seedling"></i> Green Peas</div>
+                            <div class="pantry-chip" onclick="toggleChip(this, 'potato')"><i class="fa-solid fa-egg"></i> Potatoes</div>
+                            <div class="pantry-chip" onclick="toggleChip(this, 'cauliflower')"><i class="fa-solid fa-cloud"></i> Cauliflower</div>
+                            <div class="pantry-chip" onclick="toggleChip(this, 'rice')"><i class="fa-solid fa-bowl-rice"></i> Basmati Rice</div>
+                            <div class="pantry-chip" onclick="toggleChip(this, 'besan')"><i class="fa-solid fa-wheat-awn"></i> Gram Flour (Besan)</div>
+                            <div class="pantry-chip" onclick="toggleChip(this, 'palak')"><i class="fa-solid fa-leaf"></i> Fresh Spinach (Palak)</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px;">
+                            <h3 style="font-size: 22px; font-weight: 800;">Matched Recipes</h3>
+                            <span id="matchedCountBadge" style="font-size: 12px; font-weight: 700; background: var(--badge-bg); color: var(--primary); padding: 4px 12px; border-radius: 20px;">3 Recipes Found</span>
+                        </div>
+
+                        <div id="matchedRecipesList">
+                            <div class="recipe-match-card">
+                                <img src="https://prrecipehub.com/indian-recipe-assets/lunch/paneer-butter-masala.jpg" class="match-img" alt="Paneer Butter Masala">
+                                <div>
+                                    <h4 style="font-size: 17px; font-weight: 700;">Paneer Butter Masala</h4>
+                                    <div style="font-size: 13px; color: var(--text-muted);">Main Course • 40 mins</div>
+                                    <div class="match-percent">✓ 100% Ingredients Matched</div>
+                                </div>
+                            </div>
+
+                            <div class="recipe-match-card">
+                                <img src="https://prrecipehub.com/indian-recipe-assets/lunch/matar-paneer.jpg" class="match-img" alt="Matar Paneer">
+                                <div>
+                                    <h4 style="font-size: 17px; font-weight: 700;">Matar Paneer</h4>
+                                    <div style="font-size: 13px; color: var(--text-muted);">North Indian • 35 mins</div>
+                                    <div class="match-percent">✓ 100% Ingredients Matched</div>
+                                </div>
+                            </div>
+
+                            <div class="recipe-match-card">
+                                <img src="https://prrecipehub.com/indian-recipe-assets/lunch/aloo-matar.jpg" class="match-img" alt="Aloo Matar">
+                                <div>
+                                    <h4 style="font-size: 17px; font-weight: 700;">Aloo Matar</h4>
+                                    <div style="font-size: 13px; color: var(--text-muted);">Homestyle Curry • 30 mins</div>
+                                    <div class="match-percent" style="background: rgba(255,109,0,0.15); color: #FF9100;">⚡ 85% Matched (Missing: Potato)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: 19 Language Switcher Demo -->
+            <div id="language-demo" class="demo-container demo-tab-content">
+                <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px; text-align: center;">Select Recipe Language</h3>
+                <p style="font-size: 15px; color: var(--text-muted); text-align: center; margin-bottom: 24px;">
+                    PR Recipe Hub features native translations for 19 languages across all recipe titles, ingredients, and 10+ steps:
+                </p>
+
+                <div class="lang-btn-grid">
+                    <button class="lang-pill-btn active" onclick="setDemoLang('en')">🇬🇧 English</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('hi')">🇮🇳 हिंदी (Hindi)</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('gu')">🇮🇳 ગુજરાતી (Gujarati)</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('mr')">🇮🇳 मराठी (Marathi)</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('ta')">🇮🇳 தமிழ் (Tamil)</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('te')">🇮🇳 తెలుగు (Telugu)</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('kn')">🇮🇳 ಕನ್ನಡ (Kannada)</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('bn')">🇮🇳 বাংলা (Bengali)</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('es')">🇪🇸 Español</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('fr')">🇫🇷 Français</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('de')">🇩🇪 Deutsch</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('it')">🇮🇹 Italiano</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('pt')">🇵🇹 Português</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('tr')">🇹🇷 Türkçe</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('ar')">🇸🇦 العربية</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('zh')">🇨🇳 中文</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('ja')">🇯🇵 日本語</button>
+                    <button class="lang-pill-btn" onclick="setDemoLang('ko')">🇰🇷 한국어</button>
+                </div>
+
+                <div class="recipe-demo-box">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 14px;">
+                        <h4 id="demoRecipeTitle" style="font-size: 24px; font-weight: 800; color: var(--primary);">Paneer Butter Masala</h4>
+                        <span id="demoCategoryBadge" style="background: var(--badge-bg); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700;">Main Course</span>
+                    </div>
+                    <p id="demoRecipeDesc" style="color: var(--text-secondary); margin-bottom: 20px; font-size: 15px;">
+                        Rich, creamy, restaurant-style North Indian curry made with succulent cubes of fresh paneer simmered in a velvety tomato-cashew butter gravy.
+                    </p>
+
+                    <div style="font-weight: 800; font-size: 16px; margin-bottom: 12px;">Step-by-Step Cooking Guidance:</div>
+                    <div id="demoStepsList">
+                        <div class="step-demo-row">
+                            <div class="step-badge-num">1</div>
+                            <div id="demoStep1" style="font-size: 14.5px;">Cut 300g fresh paneer into 1-inch cubes and soak in warm water with a pinch of salt for 10 minutes to keep them ultra-soft.</div>
+                        </div>
+                        <div class="step-demo-row">
+                            <div class="step-badge-num">2</div>
+                            <div id="demoStep2" style="font-size: 14.5px;">In a saucepan, boil 4 chopped ripe tomatoes, 1 chopped red onion, 2 green cardamoms, 1 inch cinnamon stick, 15 whole cashew nuts, 1 inch ginger, and 4 garlic cloves in 1 cup water for 10 minutes.</div>
+                        </div>
+                        <div class="step-demo-row">
+                            <div class="step-badge-num">3</div>
+                            <div id="demoStep3" style="font-size: 14.5px;">Transfer boiled mixture to a blender and grind into a silky-smooth, vibrant orange-red puree; strain through a fine sieve for a velvet restaurant texture.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Cooking Mode & Timer Demo -->
+            <div id="cooking-demo" class="demo-container demo-tab-content">
+                <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <span style="font-size: 12px; font-weight: 800; color: #4CAF50; background: rgba(46,125,50,0.15); padding: 4px 14px; border-radius: 20px; text-transform: uppercase;">
+                        <i class="fa-solid fa-lock-open"></i> Screen Wake-Lock Active
+                    </span>
+                    <h3 style="font-size: 26px; font-weight: 800; margin: 16px 0 8px;">Step 7 of 10: Simmer Tomato-Cashew Gravy</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 24px;">
+                        "Cook and simmer the tomato-cashew puree on medium-low flame for 8-10 minutes, stirring occasionally until butter separates from the edges."
+                    </p>
+
+                    <div style="background: var(--bg-surface); padding: 32px; border-radius: 24px; border: 1px solid var(--border); margin-bottom: 24px;">
+                        <div id="timerDisplay" style="font-family: 'Outfit', sans-serif; font-size: 64px; font-weight: 900; color: var(--primary); letter-spacing: 2px;">
+                            08:00
+                        </div>
+                        <div style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Slow Simmer Timer</div>
+                        <div style="display:flex; justify-content:center; gap: 14px;">
+                            <button id="timerBtn" class="btn-primary" onclick="toggleTimer()" style="padding: 12px 30px;">
+                                <i class="fa-solid fa-play" id="timerIcon"></i> <span id="timerBtnText">Start Timer</span>
+                            </button>
+                            <button class="btn-secondary" onclick="resetTimer()" style="padding: 12px 20px;">
+                                <i class="fa-solid fa-rotate-left"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag">Designed For Everyday Cooks</span>
+                <h2 class="section-title">Everything You Need for Joyful Cooking</h2>
+                <p class="section-desc">Thoughtfully built with smart tools to eliminate daily meal confusion and make vegetarian cooking foolproof.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>100% Pure Vegetarian & Jain</h3>
+                    <p>Strict vegetarian assurance. Filter recipes with 1-tap for Vegan, Jain (No Onion / No Garlic), Gluten-Free, and High-Protein diets.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3>Rich Recipe Collection</h3>
+                    <p>Explore an extensive library of authentic traditional recipes, custom favorites, meal schedules, and saved grocery checklists.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3>19 Languages Supported</h3>
+                    <p>Cook comfortably in Hindi, Gujarati, Tamil, Telugu, Marathi, Bengali, Spanish, French, German, and 10 more global languages.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3>Weekly Meal Planner</h3>
+                    <p>Plan nutritious family breakfasts, lunches, and dinners. Automatically track calories and macronutrients for healthy living.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h3>Smart Grocery Shopping List</h3>
+                    <p>Export recipe ingredients into categorized shopping lists with a single tap. Check off items effortlessly at your local market.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fa-solid fa-stopwatch-20"></i>
+                    </div>
+                    <h3>Hands-Free Cooking Mode</h3>
+                    <p>Enjoy step-by-step guided cards with auto-scroll, active screen wake-lock, and built-in timers for simmer, boil, and bake steps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Categories Showcase -->
+    <section id="categories" class="categories-section">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag">21 Curated Collections</span>
+                <h2 class="section-title">Explore Flavors from Every Indian Region</h2>
+                <p class="section-desc">From sizzling street chaats to royal festival feasts, find authentic dishes for every mood and celebration.</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="cat-img-wrap">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/lunch/paneer-butter-masala.jpg" alt="Main Course">
+                    </div>
+                    <div class="cat-content">
+                        <div class="cat-count">95 RECIPES</div>
+                        <div class="cat-title">Main Course Curries</div>
+                        <div class="cat-desc">Paneer specialties, koftas, kormas, and dhaba style gravies.</div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="cat-img-wrap">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/snacks/samosa.jpg" alt="Snacks & Chaat">
+                    </div>
+                    <div class="cat-content">
+                        <div class="cat-count">70 RECIPES</div>
+                        <div class="cat-title">Crispy Snacks & Chaat</div>
+                        <div class="cat-desc">Samosas, kachoris, pakoras, tikkis, and monsoon treats.</div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="cat-img-wrap">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/breakfast/masala-dosa.jpg" alt="South Indian">
+                    </div>
+                    <div class="cat-content">
+                        <div class="cat-count">45 RECIPES</div>
+                        <div class="cat-title">South Indian Delights</div>
+                        <div class="cat-desc">Crispy dosas, fluffy idlis, sambar, vadas, and pongal.</div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="cat-img-wrap">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/sweets/gulab-jamun.jpg" alt="Sweets & Mithai">
+                    </div>
+                    <div class="cat-content">
+                        <div class="cat-count">30 RECIPES</div>
+                        <div class="cat-title">Festive Sweets & Mithai</div>
+                        <div class="cat-desc">Gulab Jamun, Kaju Katli, Ladoos, Halwa, and Kheer.</div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="cat-img-wrap">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/snacks/dhokla.jpg" alt="Gujarati Rasoi">
+                    </div>
+                    <div class="cat-content">
+                        <div class="cat-count">30 RECIPES</div>
+                        <div class="cat-title">Gujarati Rasoi</div>
+                        <div class="cat-desc">Dhokla, Handvo, Thepla, Undhiyu, and Dal Dhokli.</div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="cat-img-wrap">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/lunch/dal-baati-churma.jpg" alt="Rajasthani Royal">
+                    </div>
+                    <div class="cat-content">
+                        <div class="cat-count">20 RECIPES</div>
+                        <div class="cat-title">Rajasthani Royal Thali</div>
+                        <div class="cat-desc">Dal Baati Churma, Gatte Ki Sabzi, and Ker Sangri.</div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="cat-img-wrap">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/snacks/sabudana-khichdi.jpg" alt="Farali & Vrat">
+                    </div>
+                    <div class="cat-content">
+                        <div class="cat-count">18 RECIPES</div>
+                        <div class="cat-title">Farali & Fasting (Vrat)</div>
+                        <div class="cat-desc">Sabudana Khichdi, Farali Pattice, and Moraiyo Khichdi.</div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="cat-img-wrap">
+                        <img src="https://prrecipehub.com/indian-recipe-assets/sweets/chocolate-cake.jpg" alt="Gourmet Desserts">
+                    </div>
+                    <div class="cat-content">
+                        <div class="cat-count">54 RECIPES</div>
+                        <div class="cat-title">Gourmet Eggless Desserts</div>
+                        <div class="cat-desc">Cakes, fluffy donuts, Belgian waffles, and artisanal kulfis.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag">Loved by Home Chefs</span>
+                <h2 class="section-title">What Our Community Says</h2>
+                <p class="section-desc">Join hundreds of thousands of food lovers who cook authentic vegetarian meals with PR Recipe Hub every single day.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testi-card">
+                    <div>
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="testi-text">
+                            "The Pantry Matcher is a life saver! I had some leftover paneer, green peas, and tomatoes and it gave me the exact Matar Paneer recipe in Gujarati. The step timers made it so easy!"
+                        </p>
+                    </div>
+                    <div class="testi-user">
+                        <div class="user-avatar">P</div>
+                        <div>
+                            <div class="user-name">Pooja Patel</div>
+                            <div class="user-sub">Ahmedabad • Home Chef</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <div>
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="testi-text">
+                            "Finally, a 100% pure vegetarian app with authentic recipes. I made Dal Baati and Masala Chai following the step-by-step guide and it turned out amazing!"
+                        </p>
+                    </div>
+                    <div class="testi-user">
+                        <div class="user-avatar">R</div>
+                        <div>
+                            <div class="user-name">Rahul Sharma</div>
+                            <div class="user-sub">Jaipur • Food Enthusiast</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <div>
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="testi-text">
+                            "The 19-language feature is incredible. My mother-in-law reads in Tamil while I follow the English version, and the recipes always turn out restaurant quality. 10/10 recommendation!"
+                        </p>
+                    </div>
+                    <div class="testi-user">
+                        <div class="user-avatar">S</div>
+                        <div>
+                            <div class="user-name">Sundar & Priya Raman</div>
+                            <div class="user-sub">Chennai • Busy Parents</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-tag">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Here are answers to the most common questions about PR Recipe Hub.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is PR Recipe Hub completely free to use?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! PR Recipe Hub is 100% free to download and use. You have full access to all 1000+ recipes, the Pantry Matcher, Weekly Meal Planner, and Cooking Mode. An optional Premium ad-free upgrade is available.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I save custom recipes and meal plans on my device?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! All your saved favorite recipes, preparation notes, custom ingredients, weekly meal plans, and grocery checklists are saved securely on your device for instant access anytime.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Which languages are supported?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        PR Recipe Hub supports 19 languages: English, Hindi (हिंदी), Gujarati (ગુજરાતી), Marathi (मराठी), Tamil (தமிழ்), Telugu (తెలుగు), Kannada (ಕನ್ನಡ), Bengali (বাংলা), Spanish (Español), French (Français), German (Deutsch), Italian (Italiano), Portuguese (Português), Dutch (Nederlands), Turkish (Türkçe), Arabic (العربية), Chinese (中文), Japanese (日本語), and Korean (한국어).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are there Jain (No Onion / No Garlic) recipes available?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! You can filter any category or search query for strict Jain preparation (completely free from onions, garlic, potatoes, and root vegetables) with our 1-tap dietary safety filters.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section id="download" class="download-cta-section">
+        <div class="container">
+            <div class="cta-banner">
+                <div>
+                    <h2>Start Cooking Delicious Veg Meals Today!</h2>
+                    <p>
+                        Download PR Recipe Hub free on Google Play. Join our global cooking community and transform your daily kitchen experience.
+                    </p>
+                    <div class="cta-btns">
+                        <a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" class="store-badge-btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-google-play"></i>
+                            <div>
+                                <div class="badge-sub">DOWNLOAD FOR ANDROID</div>
+                                <div class="badge-main">Google Play Store</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="background: #FFF; padding: 18px; border-radius: 20px; display: inline-block; box-shadow: 0 15px 30px rgba(0,0,0,0.3);">
+                        <!-- QR Code Simulation -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.prrecipehub.app" style="width: 150px; height: 150px;" alt="QR Code to Download PR Recipe Hub">
+                        <div style="color: #000; font-size: 11px; font-weight: 800; margin-top: 8px;">SCAN TO DOWNLOAD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="brand-logo" title="PR Recipe Hub">
+                        <img src="https://prrecipehub.com/app-logo.png" alt="PR Recipe Hub Logo" class="footer-logo-img">
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6; margin-bottom: 20px;">
+                        PR Recipe Hub is the world's leading Indian vegetarian cooking companion, offering 1000+ authentic recipes, smart pantry matching, and weekly meal planning.
+                    </p>
+                    <div style="display:flex; gap: 14px; font-size: 18px;">
+                        <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Explore Recipes</h4>
+                    <ul class="footer-links">
+                        <li><a href="#categories">Main Course Curries</a></li>
+                        <li><a href="#categories">South Indian Dosa & Idli</a></li>
+                        <li><a href="#categories">Gujarati & Rajasthani</a></li>
+                        <li><a href="#categories">Snacks & Street Food</a></li>
+                        <li><a href="#categories">Farali / Fasting Recipes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Smart Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="#interactive-demo">Pantry Ingredient Matcher</a></li>
+                        <li><a href="#interactive-demo">Guided Cooking Timer</a></li>
+                        <li><a href="#features">Weekly Meal Planner</a></li>
+                        <li><a href="#features">Grocery Shopping Checklist</a></li>
+                        <li><a href="#features">Dietary & Allergen Filters</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal & Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://prrecipehub.com/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a></li>
+                        <li><a href="https://prrecipehub.com/terms" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="mailto:support@prrecipehub.com">support@prrecipehub.com</a></li>
+                        <li><a href="#faq">FAQ & Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 PR Recipe Hub (com.prrecipehub.app). All rights reserved.</div>
+                <div style="display:flex; gap: 20px;">
+                    <span>100% Pure Vegetarian</span>
+                    <span>Made with ❤️ for Home Cooks</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // 1. Theme Toggle (Dark / Light)
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlEl = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlEl.classList.contains('dark')) {
+                htmlEl.classList.remove('dark');
+                htmlEl.classList.add('light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                htmlEl.classList.remove('light');
+                htmlEl.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // 2. Demo Tabs Switcher
+        function switchDemoTab(tabName) {
+            document.querySelectorAll('.demo-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.demo-tab-content').forEach(content => content.classList.remove('active'));
+
+            if (tabName === 'pantry') {
+                document.querySelector('.demo-tab-btn:nth-child(1)').classList.add('active');
+                document.getElementById('pantry-demo').classList.add('active');
+            } else if (tabName === 'language') {
+                document.querySelector('.demo-tab-btn:nth-child(2)').classList.add('active');
+                document.getElementById('language-demo').classList.add('active');
+            } else if (tabName === 'cooking') {
+                document.querySelector('.demo-tab-btn:nth-child(3)').classList.add('active');
+                document.getElementById('cooking-demo').classList.add('active');
+            }
+        }
+
+        // 3. Pantry Matcher Demo Chips Logic
+        const selectedChips = new Set(['paneer', 'tomato', 'peas']);
+        function toggleChip(el, ingredient) {
+            el.classList.toggle('selected');
+            if (selectedChips.has(ingredient)) {
+                selectedChips.delete(ingredient);
+            } else {
+                selectedChips.add(ingredient);
+            }
+            updatePantryResults();
+        }
+
+        function updatePantryResults() {
+            const listEl = document.getElementById('matchedRecipesList');
+            const countBadge = document.getElementById('matchedCountBadge');
+
+            const hasPaneer = selectedChips.has('paneer');
+            const hasTomato = selectedChips.has('tomato');
+            const hasPeas = selectedChips.has('peas');
+            const hasPotato = selectedChips.has('potato');
+            const hasRice = selectedChips.has('rice');
+            const hasPalak = selectedChips.has('palak');
+
+            let cards = [];
+
+            if (hasPaneer && hasTomato) {
+                cards.push(`
               <div class="recipe-match-card">
-                <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/paneer-butter-masala.jpg" class="match-img" alt="Paneer Butter Masala">
+                <img src="https://prrecipehub.com/indian-recipe-assets/lunch/paneer-butter-masala.jpg" class="match-img" alt="Paneer Butter Masala">
                 <div>
                   <h4 style="font-size: 17px; font-weight: 700;">Paneer Butter Masala</h4>
                   <div style="font-size: 13px; color: var(--text-muted);">Main Course • 40 mins</div>
                   <div class="match-percent">✓ 100% Ingredients Matched</div>
                 </div>
               </div>
+            `);
+            }
 
+            if (hasPaneer && hasPeas) {
+                cards.push(`
               <div class="recipe-match-card">
-                <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/matar-paneer.jpg" class="match-img" alt="Matar Paneer">
+                <img src="https://prrecipehub.com/indian-recipe-assets/lunch/matar-paneer.jpg" class="match-img" alt="Matar Paneer">
                 <div>
                   <h4 style="font-size: 17px; font-weight: 700;">Matar Paneer</h4>
                   <div style="font-size: 13px; color: var(--text-muted);">North Indian • 35 mins</div>
                   <div class="match-percent">✓ 100% Ingredients Matched</div>
                 </div>
               </div>
+            `);
+            }
 
+            if (hasPalak && hasPaneer) {
+                cards.push(`
               <div class="recipe-match-card">
-                <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/aloo-matar.jpg" class="match-img" alt="Aloo Matar">
+                <img src="https://prrecipehub.com/indian-recipe-assets/lunch/palak-paneer.jpg" class="match-img" alt="Palak Paneer">
+                <div>
+                  <h4 style="font-size: 17px; font-weight: 700;">Palak Paneer</h4>
+                  <div style="font-size: 13px; color: var(--text-muted);">North Indian • 30 mins</div>
+                  <div class="match-percent">✓ 100% Ingredients Matched</div>
+                </div>
+              </div>
+            `);
+            }
+
+            if (hasPotato || hasPeas) {
+                cards.push(`
+              <div class="recipe-match-card">
+                <img src="https://prrecipehub.com/indian-recipe-assets/lunch/aloo-matar.jpg" class="match-img" alt="Aloo Matar">
                 <div>
                   <h4 style="font-size: 17px; font-weight: 700;">Aloo Matar</h4>
                   <div style="font-size: 13px; color: var(--text-muted);">Homestyle Curry • 30 mins</div>
-                  <div class="match-percent" style="background: rgba(255,109,0,0.15); color: #FF9100;">⚡ 85% Matched (Missing: Potato)</div>
+                  <div class="match-percent" style="background: rgba(255,109,0,0.15); color: #FF9100;">⚡ 85% Matched</div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            `);
+            }
 
-      <!-- Tab 2: 19 Language Switcher Demo -->
-      <div id="language-demo" class="demo-container demo-tab-content">
-        <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px; text-align: center;">Select Recipe Language</h3>
-        <p style="font-size: 15px; color: var(--text-muted); text-align: center; margin-bottom: 24px;">
-          PR Recipe Hub features native translations for 19 languages across all recipe titles, ingredients, and 10+ steps:
-        </p>
-
-        <div class="lang-btn-grid">
-          <button class="lang-pill-btn active" onclick="setDemoLang('en')">🇬🇧 English</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('hi')">🇮🇳 हिंदी (Hindi)</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('gu')">🇮🇳 ગુજરાતી (Gujarati)</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('mr')">🇮🇳 मराठी (Marathi)</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('ta')">🇮🇳 தமிழ் (Tamil)</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('te')">🇮🇳 తెలుగు (Telugu)</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('kn')">🇮🇳 ಕನ್ನಡ (Kannada)</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('bn')">🇮🇳 বাংলা (Bengali)</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('es')">🇪🇸 Español</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('fr')">🇫🇷 Français</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('de')">🇩🇪 Deutsch</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('it')">🇮🇹 Italiano</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('pt')">🇵🇹 Português</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('tr')">🇹🇷 Türkçe</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('ar')">🇸🇦 العربية</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('zh')">🇨🇳 中文</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('ja')">🇯🇵 日本語</button>
-          <button class="lang-pill-btn" onclick="setDemoLang('ko')">🇰🇷 한국어</button>
-        </div>
-
-        <div class="recipe-demo-box">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 14px;">
-            <h4 id="demoRecipeTitle" style="font-size: 24px; font-weight: 800; color: var(--primary);">Paneer Butter Masala</h4>
-            <span id="demoCategoryBadge" style="background: var(--badge-bg); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700;">Main Course</span>
-          </div>
-          <p id="demoRecipeDesc" style="color: var(--text-secondary); margin-bottom: 20px; font-size: 15px;">
-            Rich, creamy, restaurant-style North Indian curry made with succulent cubes of fresh paneer simmered in a velvety tomato-cashew butter gravy.
-          </p>
-
-          <div style="font-weight: 800; font-size: 16px; margin-bottom: 12px;">Step-by-Step Cooking Guidance:</div>
-          <div id="demoStepsList">
-            <div class="step-demo-row">
-              <div class="step-badge-num">1</div>
-              <div id="demoStep1" style="font-size: 14.5px;">Cut 300g fresh paneer into 1-inch cubes and soak in warm water with a pinch of salt for 10 minutes to keep them ultra-soft.</div>
-            </div>
-            <div class="step-demo-row">
-              <div class="step-badge-num">2</div>
-              <div id="demoStep2" style="font-size: 14.5px;">In a saucepan, boil 4 chopped ripe tomatoes, 1 chopped red onion, 2 green cardamoms, 1 inch cinnamon stick, 15 whole cashew nuts, 1 inch ginger, and 4 garlic cloves in 1 cup water for 10 minutes.</div>
-            </div>
-            <div class="step-demo-row">
-              <div class="step-badge-num">3</div>
-              <div id="demoStep3" style="font-size: 14.5px;">Transfer boiled mixture to a blender and grind into a silky-smooth, vibrant orange-red puree; strain through a fine sieve for a velvet restaurant texture.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 3: Cooking Mode & Timer Demo -->
-      <div id="cooking-demo" class="demo-container demo-tab-content">
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-          <span style="font-size: 12px; font-weight: 800; color: #4CAF50; background: rgba(46,125,50,0.15); padding: 4px 14px; border-radius: 20px; text-transform: uppercase;">
-            <i class="fa-solid fa-lock-open"></i> Screen Wake-Lock Active
-          </span>
-          <h3 style="font-size: 26px; font-weight: 800; margin: 16px 0 8px;">Step 7 of 10: Simmer Tomato-Cashew Gravy</h3>
-          <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 24px;">
-            "Cook and simmer the tomato-cashew puree on medium-low flame for 8-10 minutes, stirring occasionally until butter separates from the edges."
-          </p>
-
-          <div style="background: var(--bg-surface); padding: 32px; border-radius: 24px; border: 1px solid var(--border); margin-bottom: 24px;">
-            <div id="timerDisplay" style="font-family: 'Outfit', sans-serif; font-size: 64px; font-weight: 900; color: var(--primary); letter-spacing: 2px;">
-              08:00
-            </div>
-            <div style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Slow Simmer Timer</div>
-            <div style="display:flex; justify-content:center; gap: 14px;">
-              <button id="timerBtn" class="btn-primary" onclick="toggleTimer()" style="padding: 12px 30px;">
-                <i class="fa-solid fa-play" id="timerIcon"></i> <span id="timerBtnText">Start Timer</span>
-              </button>
-              <button class="btn-secondary" onclick="resetTimer()" style="padding: 12px 20px;">
-                <i class="fa-solid fa-rotate-left"></i> Reset
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Key Features Grid -->
-  <section id="features" class="features-section">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="section-tag">Designed For Everyday Cooks</span>
-        <h2 class="section-title">Everything You Need for Joyful Cooking</h2>
-        <p class="section-desc">Thoughtfully built with smart tools to eliminate daily meal confusion and make vegetarian cooking foolproof.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <i class="fa-solid fa-seedling"></i>
-          </div>
-          <h3>100% Pure Vegetarian & Jain</h3>
-          <p>Strict vegetarian assurance. Filter recipes with 1-tap for Vegan, Jain (No Onion / No Garlic), Gluten-Free, and High-Protein diets.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <i class="fa-solid fa-wifi-slash"></i>
-          </div>
-          <h3>100% Offline Capability</h3>
-          <p>No internet? No problem! Access your entire recipe library, meal schedules, and saved grocery checklists anywhere, anytime.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <i class="fa-solid fa-language"></i>
-          </div>
-          <h3>19 Languages Supported</h3>
-          <p>Cook comfortably in Hindi, Gujarati, Tamil, Telugu, Marathi, Bengali, Spanish, French, German, and 10 more global languages.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <i class="fa-solid fa-calendar-days"></i>
-          </div>
-          <h3>Weekly Meal Planner</h3>
-          <p>Plan nutritious family breakfasts, lunches, and dinners. Automatically track calories and macronutrients for healthy living.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-          <h3>Smart Grocery Shopping List</h3>
-          <p>Export recipe ingredients into categorized shopping lists with a single tap. Check off items effortlessly at your local market.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <i class="fa-solid fa-stopwatch-20"></i>
-          </div>
-          <h3>Hands-Free Cooking Mode</h3>
-          <p>Enjoy step-by-step guided cards with auto-scroll, active screen wake-lock, and built-in timers for simmer, boil, and bake steps.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Recipe Categories Showcase -->
-  <section id="categories" class="categories-section">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="section-tag">21 Curated Collections</span>
-        <h2 class="section-title">Explore Flavors from Every Indian Region</h2>
-        <p class="section-desc">From sizzling street chaats to royal festival feasts, find authentic dishes for every mood and celebration.</p>
-      </div>
-
-      <div class="categories-grid">
-        <div class="category-card">
-          <div class="cat-img-wrap">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/paneer-butter-masala.jpg" alt="Main Course">
-          </div>
-          <div class="cat-content">
-            <div class="cat-count">95 RECIPES</div>
-            <div class="cat-title">Main Course Curries</div>
-            <div class="cat-desc">Paneer specialties, koftas, kormas, and dhaba style gravies.</div>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="cat-img-wrap">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/snacks/samosa.jpg" alt="Snacks & Chaat">
-          </div>
-          <div class="cat-content">
-            <div class="cat-count">70 RECIPES</div>
-            <div class="cat-title">Crispy Snacks & Chaat</div>
-            <div class="cat-desc">Samosas, kachoris, pakoras, tikkis, and monsoon treats.</div>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="cat-img-wrap">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/breakfast/masala-dosa.jpg" alt="South Indian">
-          </div>
-          <div class="cat-content">
-            <div class="cat-count">45 RECIPES</div>
-            <div class="cat-title">South Indian Delights</div>
-            <div class="cat-desc">Crispy dosas, fluffy idlis, sambar, vadas, and pongal.</div>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="cat-img-wrap">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/sweets/gulab-jamun.jpg" alt="Sweets & Mithai">
-          </div>
-          <div class="cat-content">
-            <div class="cat-count">30 RECIPES</div>
-            <div class="cat-title">Festive Sweets & Mithai</div>
-            <div class="cat-desc">Gulab Jamun, Kaju Katli, Ladoos, Halwa, and Kheer.</div>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="cat-img-wrap">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/snacks/dhokla.jpg" alt="Gujarati Rasoi">
-          </div>
-          <div class="cat-content">
-            <div class="cat-count">30 RECIPES</div>
-            <div class="cat-title">Gujarati Rasoi</div>
-            <div class="cat-desc">Dhokla, Handvo, Thepla, Undhiyu, and Dal Dhokli.</div>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="cat-img-wrap">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/dal-baati-churma.jpg" alt="Rajasthani Royal">
-          </div>
-          <div class="cat-content">
-            <div class="cat-count">20 RECIPES</div>
-            <div class="cat-title">Rajasthani Royal Thali</div>
-            <div class="cat-desc">Dal Baati Churma, Gatte Ki Sabzi, and Ker Sangri.</div>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="cat-img-wrap">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/snacks/sabudana-khichdi.jpg" alt="Farali & Vrat">
-          </div>
-          <div class="cat-content">
-            <div class="cat-count">18 RECIPES</div>
-            <div class="cat-title">Farali & Fasting (Vrat)</div>
-            <div class="cat-desc">Sabudana Khichdi, Farali Pattice, and Moraiyo Khichdi.</div>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="cat-img-wrap">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/sweets/chocolate-cake.jpg" alt="Gourmet Desserts">
-          </div>
-          <div class="cat-content">
-            <div class="cat-count">54 RECIPES</div>
-            <div class="cat-title">Gourmet Eggless Desserts</div>
-            <div class="cat-desc">Cakes, fluffy donuts, Belgian waffles, and artisanal kulfis.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials-section">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="section-tag">Loved by Home Chefs</span>
-        <h2 class="section-title">What Our Community Says</h2>
-        <p class="section-desc">Join hundreds of thousands of food lovers who cook authentic vegetarian meals with PR Recipe Hub every single day.</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testi-card">
-          <div>
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-text">
-              "The Pantry Matcher is a life saver! I had some leftover paneer, green peas, and tomatoes and it gave me the exact Matar Paneer recipe in Gujarati. The step timers made it so easy!"
-            </p>
-          </div>
-          <div class="testi-user">
-            <div class="user-avatar">P</div>
-            <div>
-              <div class="user-name">Pooja Patel</div>
-              <div class="user-sub">Ahmedabad • Home Chef</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div>
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-text">
-              "Finally, a 100% vegetarian app that works completely offline. I used it during my mountain camping trip to make Dal Baati and Masala Chai without needing any cellular internet!"
-            </p>
-          </div>
-          <div class="testi-user">
-            <div class="user-avatar">R</div>
-            <div>
-              <div class="user-name">Rahul Sharma</div>
-              <div class="user-sub">Jaipur • Food Enthusiast</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div>
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-text">
-              "The 19-language feature is incredible. My mother-in-law reads in Tamil while I follow the English version, and the recipes always turn out restaurant quality. 10/10 recommendation!"
-            </p>
-          </div>
-          <div class="testi-user">
-            <div class="user-avatar">S</div>
-            <div>
-              <div class="user-name">Sundar & Priya Raman</div>
-              <div class="user-sub">Chennai • Busy Parents</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Accordion Section -->
-  <section id="faq" class="faq-section">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="section-tag">Got Questions?</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-desc">Here are answers to the most common questions about PR Recipe Hub.</p>
-      </div>
-
-      <div class="faq-accordion">
-        <div class="faq-item active">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Is PR Recipe Hub completely free to use?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            Yes! PR Recipe Hub is 100% free to download and use. You have full access to all 10,000+ recipes, the Pantry Matcher, Weekly Meal Planner, and Cooking Mode. An optional Premium ad-free upgrade is available.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Does the app work without an internet connection?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            Yes! PR Recipe Hub is designed with an offline-first architecture. All recipe categories, preparation steps, ingredients, meal plans, and grocery checklists are saved directly on your device so you can cook anywhere without mobile data or WiFi.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Which languages are supported?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            PR Recipe Hub supports 19 languages: English, Hindi (हिंदी), Gujarati (ગુજરાતી), Marathi (मराठी), Tamil (தமிழ்), Telugu (తెలుగు), Kannada (ಕನ್ನಡ), Bengali (বাংলা), Spanish (Español), French (Français), German (Deutsch), Italian (Italiano), Portuguese (Português), Dutch (Nederlands), Turkish (Türkçe), Arabic (العربية), Chinese (中文), Japanese (日本語), and Korean (한국어).
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <span>Are there Jain (No Onion / No Garlic) recipes available?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            Yes! You can filter any category or search query for strict Jain preparation (completely free from onions, garlic, potatoes, and root vegetables) with our 1-tap dietary safety filters.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Download CTA Section -->
-  <section id="download" class="download-cta-section">
-    <div class="container">
-      <div class="cta-banner">
-        <div>
-          <h2>Start Cooking Delicious Veg Meals Today!</h2>
-          <p>
-            Download PR Recipe Hub free on Google Play. Join our global cooking community and transform your daily kitchen experience.
-          </p>
-          <div class="cta-btns">
-            <a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" class="store-badge-btn" target="_blank" rel="noopener">
-              <i class="fa-brands fa-google-play"></i>
-              <div>
-                <div class="badge-sub">DOWNLOAD FOR ANDROID</div>
-                <div class="badge-main">Google Play Store</div>
+            if (hasRice) {
+                cards.push(`
+              <div class="recipe-match-card">
+                <img src="https://prrecipehub.com/indian-recipe-assets/rice/veg-biryani.jpg" class="match-img" alt="Veg Biryani">
+                <div>
+                  <h4 style="font-size: 17px; font-weight: 700;">Shahi Veg Biryani</h4>
+                  <div style="font-size: 13px; color: var(--text-muted);">Royal Rice • 45 mins</div>
+                  <div class="match-percent">✓ 100% Ingredients Matched</div>
+                </div>
               </div>
-            </a>
-          </div>
-        </div>
+            `);
+            }
 
-        <div style="text-align: center;">
-          <div style="background: #FFF; padding: 18px; border-radius: 20px; display: inline-block; box-shadow: 0 15px 30px rgba(0,0,0,0.3);">
-            <!-- QR Code Simulation -->
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.prrecipehub.app" style="width: 150px; height: 150px;" alt="QR Code to Download PR Recipe Hub">
-            <div style="color: #000; font-size: 11px; font-weight: 800; margin-top: 8px;">SCAN TO DOWNLOAD</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            if (cards.length === 0) {
+                listEl.innerHTML = '<p style="color: var(--text-muted); padding: 20px 0;">Select ingredients above to discover matching recipes!</p>';
+                countBadge.textContent = '0 Recipes Found';
+            } else {
+                listEl.innerHTML = cards.join('');
+                countBadge.textContent = `${cards.length} Recipes Found`;
+            }
+        }
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="#" class="brand-logo" title="PR Recipe Hub">
-            <img src="https://gausairavi.github.io/prrecipehub-web/app-logo.png" alt="PR Recipe Hub Logo" class="footer-logo-img">
-          </a>
-          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6; margin-bottom: 20px;">
-            PR Recipe Hub is the world's leading Indian vegetarian cooking companion, offering 10,000+ authentic recipes, smart pantry matching, and offline meal planning.
-          </p>
-          <div style="display:flex; gap: 14px; font-size: 18px;">
-            <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-x-twitter"></i></a>
-          </div>
-        </div>
+        // 4. Multi-Language Live Translator Demo
+        const langData = {
+            en: {
+                title: "Paneer Butter Masala",
+                cat: "Main Course",
+                desc: "Rich, creamy, restaurant-style North Indian curry made with succulent cubes of fresh paneer simmered in a velvety tomato-cashew butter gravy.",
+                s1: "Cut 300g fresh paneer into 1-inch cubes and soak in warm water with a pinch of salt for 10 minutes to keep them ultra-soft.",
+                s2: "In a saucepan, boil 4 chopped ripe tomatoes, 1 chopped red onion, 2 green cardamoms, 1 inch cinnamon stick, 15 whole cashew nuts, 1 inch ginger, and 4 garlic cloves in 1 cup water for 10 minutes.",
+                s3: "Transfer boiled mixture to a blender and grind into a silky-smooth, vibrant orange-red puree; strain through a fine sieve for a velvet restaurant texture."
+            },
+            hi: {
+                title: "पनीर बटर मसाला",
+                cat: "मुख्य भोजन (मेन कोर्स)",
+                desc: "पनीर बटर मसाला एक शाही, मखमली और अत्यंत स्वादिष्ट उत्तर भारतीय करी है, जिसे ताजे पनीर, टमाटर, काजू और मक्खन की समृद्ध ग्रेवी में बनाया जाता है।",
+                s1: "300 ग्राम ताजे पनीर को 1-इंच के चौकोर टुकड़ों में काटें और 10 मिनट के लिए गुनगुने नमक वाले पानी में भिगो दें ताकि पनीर एकदम नरम बना रहे।",
+                s2: "एक पैन में 4 कटे टमाटर, 1 कटी प्याज, 2 हरी इलायची, 1 इंच दालचीनी, 15 साबुत काजू, 1 इंच अदरक और 4 लहसुन की कलियां 1 कप पानी में 10 मिनट तक उबालें।",
+                s3: "उबले हुए मिश्रण को ठंडा करके मिक्सी में एकदम बारीक व रेशमी प्यूरी पीस लें; फिर छन्नी से छान लें ताकि रेस्टोरेंट जैसी मखमली ग्रेवी मिले।"
+            },
+            gu: {
+                title: "પનીર બટર મસાલા",
+                cat: "મુખ્ય ભોજન (મેઈન કોર્સ)",
+                desc: "પનીર બટર મસાલા એક અત્યંત સ્વાદિષ્ટ અને શાહી વાનગી છે જે તાજા પનીર, ટામેટા-કાજુની મખમલી ગ્રેવી અને માખણ સાથે બનાવવામાં આવે છે.",
+                s1: "૩૦૦ ગ્રામ તાજા પનીરના ચોરસ ટુકડા કરી હૂંફાળા મીઠાવાળા પાણીમાં ૧૦ મિનિટ પલાળી રાખો જેથી પનીર એકદમ સોફ્ટ રહે.",
+                s2: "એક પેનમાં ૪ સમારેલા ટામેટાં, ૧ ડુંગળી, ૨ એલચી, ૧ તજનો ટુકડો, ૧૫ કાજુ, ૧ ઇંચ આદુ અને ૪ લસણની કળી ૧ કપ પાણીમાં ૧૦ મિનિટ બાફી લો.",
+                s3: "બાફેલું મિશ્રણ ઠંડુ કરી મિક્સરમાં એકદમ મુલાયમ પીસી લો અને ગળણીથી ગાળી લો જેથી રેસ્ટોરન્ટ જેવી મખમલી ગ્રેવી બને."
+            },
+            mr: {
+                title: "पनीर बटर मसाला",
+                cat: "मुख्य जेवण",
+                desc: "मऊ पनीर, टोमॅटो आणि काजूच्या रेशमी ग्रेव्हीमध्ये लोणी व कसुरी मेथी घालून बनवलेली स्वादिष्ट पंजाबी करी.",
+                s1: "३०० ग्रॅम ताजे पनीर चौकोनी तुकड्यांमध्ये कापून कोमट मिठाच्या पाण्यात १० मिनिटे भिजत ठेवा जेणेकरून पनीर मऊ राहील.",
+                s2: "एका भांड्यात ४ टोमॅटो, १ कांदा, २ हिरवी वेलची, दालचिनी, १५ काजू, आले आणि लसूण १ कप पाण्यात १० मिनिटे उकळवून घ्या.",
+                s3: "उकडलेले मिश्रण थंड झाल्यावर मिक्सरमध्ये गुळगुळीत बारीक वाटून घ्या आणि मखमली पोतासाठी चाळणीने गाळून घ्या."
+            },
+            ta: {
+                title: "பன்னீர் பட்டர் மசாலா",
+                cat: "பிரதான உணவு",
+                desc: "மென்மையான பன்னீர் துண்டுகள், தக்காளி மற்றும் முந்திரி வெண்ணெய் கிரேவியில் சமைக்கப்படும் சுவையான வட இந்திய உணவு.",
+                s1: "300 கிராம் பன்னீரை துண்டுகளாக வெட்டி, உப்பு கலந்த வெதுவெதுப்பான நீரில் 10 நிமிடங்கள் ஊற வைக்கவும்.",
+                s2: "ஒரு பாத்திரத்தில் தக்காளி, வெங்காயம், ஏலக்காய், பட்டை, 15 முந்திரி, இஞ்சி மற்றும் பூண்டு சேர்த்து 10 நிமிடங்கள் வேகவைக்கவும்.",
+                s3: "வேகவைத்த கலவையை மிக்ஸியில் மிருதுவாக அரைத்து, மென்மையான கிரேவிக்கு வடிகட்டவும்."
+            },
+            es: {
+                title: "Paneer Butter Masala",
+                cat: "Plato Principal",
+                desc: "Curry cremoso del norte de la India preparado con queso paneer tierno en una suave salsa de tomate, anacardos y mantequilla.",
+                s1: "Corte 300g de paneer fresco en cubos y sumérjalo en agua tibia con sal durante 10 minutos para mantenerlo suave.",
+                s2: "En una cacerola, hierva tomates, cebolla, cardamomo, canela, anacardos, jengibre y ajo en agua durante 10 minutos.",
+                s3: "Triture la mezcla cocida en una licuadora hasta obtener un puré aterciopelado y suave."
+            },
+            fr: {
+                title: "Paneer Butter Masala",
+                cat: "Plat Principal",
+                desc: "Curry onctueux et riche du nord de l'Inde avec du fromage paneer tendre mijoté dans une sauce veloutée tomate-cajou au beurre.",
+                s1: "Coupez 300g de paneer frais en cubes et trempez-les dans de l'eau tiède salée pendant 10 minutes.",
+                s2: "Faites bouillir les tomates, l'oignon, la cardamome, la cannelle, les noix de cajou, le gingembre et l'ail pendant 10 minutes.",
+                s3: "Mixez le tout en un coulis soyeux et passez au tamis pour une texture parfaite de restaurant."
+            }
+        };
 
-        <div class="footer-col">
-          <h4>Explore Recipes</h4>
-          <ul class="footer-links">
-            <li><a href="#categories">Main Course Curries</a></li>
-            <li><a href="#categories">South Indian Dosa & Idli</a></li>
-            <li><a href="#categories">Gujarati & Rajasthani</a></li>
-            <li><a href="#categories">Snacks & Street Food</a></li>
-            <li><a href="#categories">Farali / Fasting Recipes</a></li>
-          </ul>
-        </div>
+        function setDemoLang(langCode) {
+            document.querySelectorAll('.lang-pill-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-        <div class="footer-col">
-          <h4>Smart Tools</h4>
-          <ul class="footer-links">
-            <li><a href="#interactive-demo">Pantry Ingredient Matcher</a></li>
-            <li><a href="#interactive-demo">Guided Cooking Timer</a></li>
-            <li><a href="#features">Weekly Meal Planner</a></li>
-            <li><a href="#features">Grocery Shopping Checklist</a></li>
-            <li><a href="#features">Dietary & Allergen Filters</a></li>
-          </ul>
-        </div>
+            const data = langData[langCode] || langData['en'];
+            document.getElementById('demoRecipeTitle').textContent = data.title;
+            document.getElementById('demoCategoryBadge').textContent = data.cat;
+            document.getElementById('demoRecipeDesc').textContent = data.desc;
+            document.getElementById('demoStep1').textContent = data.s1;
+            document.getElementById('demoStep2').textContent = data.s2;
+            document.getElementById('demoStep3').textContent = data.s3;
+        }
 
-        <div class="footer-col">
-          <h4>Legal & Support</h4>
-          <ul class="footer-links">
-            <li><a href="https://prrecipehub.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
-            <li><a href="https://prrecipehub.com/terms" target="_blank" rel="noopener">Terms of Service</a></li>
-            <li><a href="mailto:support@prrecipehub.com">support@prrecipehub.com</a></li>
-            <li><a href="#faq">FAQ & Help Center</a></li>
-          </ul>
-        </div>
-      </div>
+        // 5. Guided Cooking Timer Demo
+        let timerSeconds = 480; // 8 mins
+        let timerInterval = null;
+        let timerRunning = false;
 
-      <div class="footer-bottom">
-        <div>© 2026 PR Recipe Hub (com.prrecipehub.app). All rights reserved.</div>
-        <div style="display:flex; gap: 20px;">
-          <span>100% Pure Vegetarian</span>
-          <span>Made with ❤️ for Home Cooks</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+        function formatTime(sec) {
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
 
-  <!-- Interactive JavaScript Logic -->
-  <script>
-    // 1. Theme Toggle (Dark / Light)
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const htmlEl = document.documentElement;
+        function toggleTimer() {
+            const btn = document.getElementById('timerBtn');
+            const icon = document.getElementById('timerIcon');
+            const text = document.getElementById('timerBtnText');
 
-    themeToggleBtn.addEventListener('click', () => {
-      if (htmlEl.classList.contains('dark')) {
-        htmlEl.classList.remove('dark');
-        htmlEl.classList.add('light');
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-      } else {
-        htmlEl.classList.remove('light');
-        htmlEl.classList.add('dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-      }
-    });
+            if (timerRunning) {
+                clearInterval(timerInterval);
+                timerRunning = false;
+                icon.className = 'fa-solid fa-play';
+                text.textContent = 'Resume Timer';
+                btn.style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)';
+            } else {
+                timerRunning = true;
+                icon.className = 'fa-solid fa-pause';
+                text.textContent = 'Pause Timer';
+                btn.style.background = 'linear-gradient(135deg, #E53935 0%, #C62828 100%)';
 
-    // 2. Demo Tabs Switcher
-    function switchDemoTab(tabName) {
-      document.querySelectorAll('.demo-tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.demo-tab-content').forEach(content => content.classList.remove('active'));
+                timerInterval = setInterval(() => {
+                    if (timerSeconds > 0) {
+                        timerSeconds--;
+                        document.getElementById('timerDisplay').textContent = formatTime(timerSeconds);
+                    } else {
+                        clearInterval(timerInterval);
+                        timerRunning = false;
+                        icon.className = 'fa-solid fa-check';
+                        text.textContent = 'Timer Complete!';
+                        alert('🔔 Simmering time complete! Your Paneer Butter Masala gravy is ready.');
+                    }
+                }, 1000);
+            }
+        }
 
-      if (tabName === 'pantry') {
-        document.querySelector('.demo-tab-btn:nth-child(1)').classList.add('active');
-        document.getElementById('pantry-demo').classList.add('active');
-      } else if (tabName === 'language') {
-        document.querySelector('.demo-tab-btn:nth-child(2)').classList.add('active');
-        document.getElementById('language-demo').classList.add('active');
-      } else if (tabName === 'cooking') {
-        document.querySelector('.demo-tab-btn:nth-child(3)').classList.add('active');
-        document.getElementById('cooking-demo').classList.add('active');
-      }
-    }
-
-    // 3. Pantry Matcher Demo Chips Logic
-    const selectedChips = new Set(['paneer', 'tomato', 'peas']);
-    function toggleChip(el, ingredient) {
-      el.classList.toggle('selected');
-      if (selectedChips.has(ingredient)) {
-        selectedChips.delete(ingredient);
-      } else {
-        selectedChips.add(ingredient);
-      }
-      updatePantryResults();
-    }
-
-    function updatePantryResults() {
-      const listEl = document.getElementById('matchedRecipesList');
-      const countBadge = document.getElementById('matchedCountBadge');
-      
-      const hasPaneer = selectedChips.has('paneer');
-      const hasTomato = selectedChips.has('tomato');
-      const hasPeas = selectedChips.has('peas');
-      const hasPotato = selectedChips.has('potato');
-      const hasRice = selectedChips.has('rice');
-      const hasPalak = selectedChips.has('palak');
-
-      let cards = [];
-
-      if (hasPaneer && hasTomato) {
-        cards.push(`
-          <div class="recipe-match-card">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/paneer-butter-masala.jpg" class="match-img" alt="Paneer Butter Masala">
-            <div>
-              <h4 style="font-size: 17px; font-weight: 700;">Paneer Butter Masala</h4>
-              <div style="font-size: 13px; color: var(--text-muted);">Main Course • 40 mins</div>
-              <div class="match-percent">✓ 100% Ingredients Matched</div>
-            </div>
-          </div>
-        `);
-      }
-
-      if (hasPaneer && hasPeas) {
-        cards.push(`
-          <div class="recipe-match-card">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/matar-paneer.jpg" class="match-img" alt="Matar Paneer">
-            <div>
-              <h4 style="font-size: 17px; font-weight: 700;">Matar Paneer</h4>
-              <div style="font-size: 13px; color: var(--text-muted);">North Indian • 35 mins</div>
-              <div class="match-percent">✓ 100% Ingredients Matched</div>
-            </div>
-          </div>
-        `);
-      }
-
-      if (hasPalak && hasPaneer) {
-        cards.push(`
-          <div class="recipe-match-card">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/palak-paneer.jpg" class="match-img" alt="Palak Paneer">
-            <div>
-              <h4 style="font-size: 17px; font-weight: 700;">Palak Paneer</h4>
-              <div style="font-size: 13px; color: var(--text-muted);">North Indian • 30 mins</div>
-              <div class="match-percent">✓ 100% Ingredients Matched</div>
-            </div>
-          </div>
-        `);
-      }
-
-      if (hasPotato || hasPeas) {
-        cards.push(`
-          <div class="recipe-match-card">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/lunch/aloo-matar.jpg" class="match-img" alt="Aloo Matar">
-            <div>
-              <h4 style="font-size: 17px; font-weight: 700;">Aloo Matar</h4>
-              <div style="font-size: 13px; color: var(--text-muted);">Homestyle Curry • 30 mins</div>
-              <div class="match-percent" style="background: rgba(255,109,0,0.15); color: #FF9100;">⚡ 85% Matched</div>
-            </div>
-          </div>
-        `);
-      }
-
-      if (hasRice) {
-        cards.push(`
-          <div class="recipe-match-card">
-            <img src="https://gausairavi.github.io/prrecipehub-images/indian-recipe-assets/rice/veg-biryani.jpg" class="match-img" alt="Veg Biryani">
-            <div>
-              <h4 style="font-size: 17px; font-weight: 700;">Shahi Veg Biryani</h4>
-              <div style="font-size: 13px; color: var(--text-muted);">Royal Rice • 45 mins</div>
-              <div class="match-percent">✓ 100% Ingredients Matched</div>
-            </div>
-          </div>
-        `);
-      }
-
-      if (cards.length === 0) {
-        listEl.innerHTML = '<p style="color: var(--text-muted); padding: 20px 0;">Select ingredients above to discover matching recipes!</p>';
-        countBadge.textContent = '0 Recipes Found';
-      } else {
-        listEl.innerHTML = cards.join('');
-        countBadge.textContent = `${cards.length} Recipes Found`;
-      }
-    }
-
-    // 4. Multi-Language Live Translator Demo
-    const langData = {
-      en: {
-        title: "Paneer Butter Masala",
-        cat: "Main Course",
-        desc: "Rich, creamy, restaurant-style North Indian curry made with succulent cubes of fresh paneer simmered in a velvety tomato-cashew butter gravy.",
-        s1: "Cut 300g fresh paneer into 1-inch cubes and soak in warm water with a pinch of salt for 10 minutes to keep them ultra-soft.",
-        s2: "In a saucepan, boil 4 chopped ripe tomatoes, 1 chopped red onion, 2 green cardamoms, 1 inch cinnamon stick, 15 whole cashew nuts, 1 inch ginger, and 4 garlic cloves in 1 cup water for 10 minutes.",
-        s3: "Transfer boiled mixture to a blender and grind into a silky-smooth, vibrant orange-red puree; strain through a fine sieve for a velvet restaurant texture."
-      },
-      hi: {
-        title: "पनीर बटर मसाला",
-        cat: "मुख्य भोजन (मेन कोर्स)",
-        desc: "पनीर बटर मसाला एक शाही, मखमली और अत्यंत स्वादिष्ट उत्तर भारतीय करी है, जिसे ताजे पनीर, टमाटर, काजू और मक्खन की समृद्ध ग्रेवी में बनाया जाता है।",
-        s1: "300 ग्राम ताजे पनीर को 1-इंच के चौकोर टुकड़ों में काटें और 10 मिनट के लिए गुनगुने नमक वाले पानी में भिगो दें ताकि पनीर एकदम नरम बना रहे।",
-        s2: "एक पैन में 4 कटे टमाटर, 1 कटी प्याज, 2 हरी इलायची, 1 इंच दालचीनी, 15 साबुत काजू, 1 इंच अदरक और 4 लहसुन की कलियां 1 कप पानी में 10 मिनट तक उबालें।",
-        s3: "उबले हुए मिश्रण को ठंडा करके मिक्सी में एकदम बारीक व रेशमी प्यूरी पीस लें; फिर छन्नी से छान लें ताकि रेस्टोरेंट जैसी मखमली ग्रेवी मिले।"
-      },
-      gu: {
-        title: "પનીર બટર મસાલા",
-        cat: "મુખ્ય ભોજન (મેઈન કોર્સ)",
-        desc: "પનીર બટર મસાલા એક અત્યંત સ્વાદિષ્ટ અને શાહી વાનગી છે જે તાજા પનીર, ટામેટા-કાજુની મખમલી ગ્રેવી અને માખણ સાથે બનાવવામાં આવે છે.",
-        s1: "૩૦૦ ગ્રામ તાજા પનીરના ચોરસ ટુકડા કરી હૂંફાળા મીઠાવાળા પાણીમાં ૧૦ મિનિટ પલાળી રાખો જેથી પનીર એકદમ સોફ્ટ રહે.",
-        s2: "એક પેનમાં ૪ સમારેલા ટામેટાં, ૧ ડુંગળી, ૨ એલચી, ૧ તજનો ટુકડો, ૧૫ કાજુ, ૧ ઇંચ આદુ અને ૪ લસણની કળી ૧ કપ પાણીમાં ૧૦ મિનિટ બાફી લો.",
-        s3: "બાફેલું મિશ્રણ ઠંડુ કરી મિક્સરમાં એકદમ મુલાયમ પીસી લો અને ગળણીથી ગાળી લો જેથી રેસ્ટોરન્ટ જેવી મખમલી ગ્રેવી બને."
-      },
-      mr: {
-        title: "पनीर बटर मसाला",
-        cat: "मुख्य जेवण",
-        desc: "मऊ पनीर, टोमॅटो आणि काजूच्या रेशमी ग्रेव्हीमध्ये लोणी व कसुरी मेथी घालून बनवलेली स्वादिष्ट पंजाबी करी.",
-        s1: "३०० ग्रॅम ताजे पनीर चौकोनी तुकड्यांमध्ये कापून कोमट मिठाच्या पाण्यात १० मिनिटे भिजत ठेवा जेणेकरून पनीर मऊ राहील.",
-        s2: "एका भांड्यात ४ टोमॅटो, १ कांदा, २ हिरवी वेलची, दालचिनी, १५ काजू, आले आणि लसूण १ कप पाण्यात १० मिनिटे उकळवून घ्या.",
-        s3: "उकडलेले मिश्रण थंड झाल्यावर मिक्सरमध्ये गुळगुळीत बारीक वाटून घ्या आणि मखमली पोतासाठी चाळणीने गाळून घ्या."
-      },
-      ta: {
-        title: "பன்னீர் பட்டர் மசாலா",
-        cat: "பிரதான உணவு",
-        desc: "மென்மையான பன்னீர் துண்டுகள், தக்காளி மற்றும் முந்திரி வெண்ணெய் கிரேவியில் சமைக்கப்படும் சுவையான வட இந்திய உணவு.",
-        s1: "300 கிராம் பன்னீரை துண்டுகளாக வெட்டி, உப்பு கலந்த வெதுவெதுப்பான நீரில் 10 நிமிடங்கள் ஊற வைக்கவும்.",
-        s2: "ஒரு பாத்திரத்தில் தக்காளி, வெங்காயம், ஏலக்காய், பட்டை, 15 முந்திரி, இஞ்சி மற்றும் பூண்டு சேர்த்து 10 நிமிடங்கள் வேகவைக்கவும்.",
-        s3: "வேகவைத்த கலவையை மிக்ஸியில் மிருதுவாக அரைத்து, மென்மையான கிரேவிக்கு வடிகட்டவும்."
-      },
-      es: {
-        title: "Paneer Butter Masala",
-        cat: "Plato Principal",
-        desc: "Curry cremoso del norte de la India preparado con queso paneer tierno en una suave salsa de tomate, anacardos y mantequilla.",
-        s1: "Corte 300g de paneer fresco en cubos y sumérjalo en agua tibia con sal durante 10 minutos para mantenerlo suave.",
-        s2: "En una cacerola, hierva tomates, cebolla, cardamomo, canela, anacardos, jengibre y ajo en agua durante 10 minutos.",
-        s3: "Triture la mezcla cocida en una licuadora hasta obtener un puré aterciopelado y suave."
-      },
-      fr: {
-        title: "Paneer Butter Masala",
-        cat: "Plat Principal",
-        desc: "Curry onctueux et riche du nord de l'Inde avec du fromage paneer tendre mijoté dans une sauce veloutée tomate-cajou au beurre.",
-        s1: "Coupez 300g de paneer frais en cubes et trempez-les dans de l'eau tiède salée pendant 10 minutes.",
-        s2: "Faites bouillir les tomates, l'oignon, la cardamome, la cannelle, les noix de cajou, le gingembre et l'ail pendant 10 minutes.",
-        s3: "Mixez le tout en un coulis soyeux et passez au tamis pour une texture parfaite de restaurant."
-      }
-    };
-
-    function setDemoLang(langCode) {
-      document.querySelectorAll('.lang-pill-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      const data = langData[langCode] || langData['en'];
-      document.getElementById('demoRecipeTitle').textContent = data.title;
-      document.getElementById('demoCategoryBadge').textContent = data.cat;
-      document.getElementById('demoRecipeDesc').textContent = data.desc;
-      document.getElementById('demoStep1').textContent = data.s1;
-      document.getElementById('demoStep2').textContent = data.s2;
-      document.getElementById('demoStep3').textContent = data.s3;
-    }
-
-    // 5. Guided Cooking Timer Demo
-    let timerSeconds = 480; // 8 mins
-    let timerInterval = null;
-    let timerRunning = false;
-
-    function formatTime(sec) {
-      const m = Math.floor(sec / 60);
-      const s = sec % 60;
-      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-    }
-
-    function toggleTimer() {
-      const btn = document.getElementById('timerBtn');
-      const icon = document.getElementById('timerIcon');
-      const text = document.getElementById('timerBtnText');
-
-      if (timerRunning) {
-        clearInterval(timerInterval);
-        timerRunning = false;
-        icon.className = 'fa-solid fa-play';
-        text.textContent = 'Resume Timer';
-        btn.style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)';
-      } else {
-        timerRunning = true;
-        icon.className = 'fa-solid fa-pause';
-        text.textContent = 'Pause Timer';
-        btn.style.background = 'linear-gradient(135deg, #E53935 0%, #C62828 100%)';
-
-        timerInterval = setInterval(() => {
-          if (timerSeconds > 0) {
-            timerSeconds--;
-            document.getElementById('timerDisplay').textContent = formatTime(timerSeconds);
-          } else {
+        function resetTimer() {
             clearInterval(timerInterval);
             timerRunning = false;
-            icon.className = 'fa-solid fa-check';
-            text.textContent = 'Timer Complete!';
-            alert('🔔 Simmering time complete! Your Paneer Butter Masala gravy is ready.');
-          }
-        }, 1000);
-      }
-    }
+            timerSeconds = 480;
+            document.getElementById('timerDisplay').textContent = '08:00';
+            document.getElementById('timerIcon').className = 'fa-solid fa-play';
+            document.getElementById('timerBtnText').textContent = 'Start Timer';
+            document.getElementById('timerBtn').style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)';
+        }
 
-    function resetTimer() {
-      clearInterval(timerInterval);
-      timerRunning = false;
-      timerSeconds = 480;
-      document.getElementById('timerDisplay').textContent = '08:00';
-      document.getElementById('timerIcon').className = 'fa-solid fa-play';
-      document.getElementById('timerBtnText').textContent = 'Start Timer';
-      document.getElementById('timerBtn').style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)';
-    }
-
-    // 6. FAQ Accordion Toggle
-    function toggleFaq(headerEl) {
-      const item = headerEl.parentElement;
-      item.classList.toggle('active');
-    }
-  </script>
+        // 6. FAQ Accordion Toggle
+        function toggleFaq(headerEl) {
+            const item = headerEl.parentElement;
+            item.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
