@@ -1,0 +1,106 @@
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Rider
+.idea/
+
+# Visual Studio Code workspace
+*.code-workspace
+
+# NuGet
+*.nupkg
+# The packages folder can be ignored because of PackageReference
+**/packages/
+
+# dotnet user secrets
+secrets.json
+
+# MSBuild generated files
+*.log
+*.vspscc
+*.vssscc
+
+# Publish output
+publish/
+
+# Entity Framework Core Migrations (if you prefer to exclude binary artifacts)
+#*/Migrations/Scaffolded*
+
+# SQL Server
+*.mdf
+*.ldf
+
+# LocalDB
+App_Data/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userprefs
+
+# JetBrains Rider
+.idea/
+
+# Test result files
+TestResults/
+*.trx
+
+# Coverage
+*.coverage
+*.coveragexml
+coverage.opencover.xml
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Docker files
+**/docker-compose.*.yml
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Swagger generated files
+/swagger/**/swagger.json
+
+# ASP.NET Core environment files
+appsettings.*.Local.json
+appsettings.*.Local.*
+
+# VS publish settings
+*.Publish.xml
+
+# Rider caches
+.idea/
+
+# Visual Studio Code settings
+.vscode/
+# API runtime logs (Serilog)
+Logs/
+**/Logs/
+# Local dotnet tools
+.tools/
+# Restored from previous .gitignore
+secrets.json
+appsettings.*.Local.json
+appsettings.*.Local.*
+.vscode/
+TestResults/
+*.trx
+Thumbs.db
+.DS_Store

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - PR Recipe Hub</title>
+    <meta name="description"
+          content="Privacy Policy for PR Recipe Hub mobile application. Discover how we protect your personal culinary data, offline storage, AdMob advertising, and user privacy rights.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0F172A">
+    <link rel="canonical" href="https://gausairavi.github.io/prrecipehub-privacypolicy/privacy-policy.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Privacy Policy - PR Recipe Hub">
+    <meta property="og:description"
+          content="Transparent, offline-first privacy policy for PR Recipe Hub culinary and meal planning app.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gausairavi.github.io/prrecipehub-privacypolicy/privacy-policy.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-glow: rgba(16, 185, 129, 0.25);
+            --primary-dark: #059669;
+            --secondary: #F59E0B;
+            --accent: #E23E3E;
+            --accent-glow: rgba(226, 62, 62, 0.2);
+            --bg: #0A0F1D;
+            --bg-alt: #0F172A;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(51, 65, 85, 0.6);
+            --card-border-hover: rgba(16, 185, 129, 0.4);
+            --text: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-subtle: #64748B;
+            --surface: #1E293B;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 85% 85%, rgba(226, 62, 62, 0.06) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px 80px 24px;
+        }
+
+        /* Header & Hero */
+        .header {
+            text-align: center;
+            padding-bottom: 36px;
+            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 36px;
+            position: relative;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid var(--primary-glow);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-container {
+            font-size: 52px;
+            margin-bottom: 14px;
+            filter: drop-shadow(0 4px 12px rgba(226, 62, 62, 0.3));
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 0 0 12px 0;
+            background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .app-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-top: 10px;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--surface);
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+        }
+
+        /* Table of Contents / Navigation Pills */
+        .toc-container {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 22px 24px;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .toc-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+            .toc-link:hover {
+                background: var(--primary-glow);
+                border-color: var(--primary);
+                color: #FFFFFF;
+                transform: translateX(3px);
+            }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-subtle);
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+            .card:hover {
+                border-color: var(--card-border-hover);
+                box-shadow: var(--shadow-glow);
+            }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-top: 0;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+        }
+
+            h2 .icon {
+                font-size: 1.35rem;
+            }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #E2E8F0;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+            p:last-child {
+                margin-bottom: 0;
+            }
+
+        ul,
+        ol {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            color: #E2E8F0;
+            font-size: 0.96rem;
+            line-height: 1.65;
+            margin-bottom: 10px;
+        }
+
+            li strong {
+                color: #FFFFFF;
+            }
+
+        /* Highlights & Callouts */
+        .callout {
+            background: rgba(16, 185, 129, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 18px 0;
+        }
+
+            .callout p {
+                color: #D1FAE5;
+                margin: 0;
+            }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.08);
+            border-left-color: var(--secondary);
+        }
+
+            .callout-warning p {
+                color: #FEF3C7;
+            }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 18px 0;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--card-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        th {
+            background: #0F172A;
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        td {
+            padding: 12px 16px;
+            color: #CBD5E1;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+            background: rgba(30, 41, 59, 0.4);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(15, 23, 42, 0.8);
+            color: #38BDF8;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 0.88em;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Contact Box */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 1px solid var(--primary);
+            border-radius: var(--radius-lg);
+            padding: 26px;
+            margin-top: 10px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+
+            .contact-item .icon {
+                font-size: 1.4rem;
+            }
+
+            .contact-item a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 600;
+                word-break: break-all;
+            }
+
+                .contact-item a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--text-subtle);
+            font-size: 0.88rem;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--card-border);
+        }
+
+            footer a {
+                color: var(--primary);
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 28px 16px 60px 16px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: #FFFFFF;
+                color: #000000;
+            }
+
+            .card,
+            .toc-container {
+                border: 1px solid #CCCCCC;
+                background: #FFFFFF;
+                box-shadow: none;
+            }
+
+            h1,
+            h2,
+            h3,
+            p,
+            li,
+            td,
+            th {
+                color: #000000 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="brand-badge">Official Policy Statement</div>
+            <div class="logo-container">🍳</div>
+            <h1>Privacy Policy for PR Recipe Hub</h1>
+            <div class="app-meta">
+                <span class="meta-tag"><strong>Application:</strong> PR Recipe Hub</span>
+                <span class="meta-tag"><strong>Package:</strong> com.prrecipehub.app</span>
+                <span class="meta-tag"><strong>Effective Date:</strong> August 16, 2026</span>
+                <span class="meta-tag"><strong>Version:</strong> 1.0.0 (Build 6)</span>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="toc-container" aria-label="Table of Contents">
+            <div class="toc-title">📌 Quick Navigation</div>
+            <div class="toc-grid">
+                <a href="#overview" class="toc-link">1. Overview & Offline Commitment</a>
+                <a href="#data-collection" class="toc-link">2. Data Collection & Local Storage</a>
+                <a href="#features-privacy" class="toc-link">3. Features & Data Handling</a>
+                <a href="#monetization" class="toc-link">4. Advertising & Google AdMob</a>
+                <a href="#children" class="toc-link">5. Children's Privacy (COPPA)</a>
+                <a href="#permissions" class="toc-link">6. App Permissions Explained</a>
+                <a href="#rights" class="toc-link">7. User Rights & Data Portability</a>
+                <a href="#contact" class="toc-link">8. Contact Information</a>
+            </div>
+        </nav>
+
+        <!-- Section 1: Overview -->
+        <section id="overview" class="card">
+            <h2><span class="icon">🛡️</span> 1. Overview & Privacy Commitment</h2>
+            <p>
+                Welcome to <strong>PR Recipe Hub</strong> ("we," "our," or "us"). We provide a comprehensive culinary recipe
+                discovery, meal planning, pantry ingredient management, and smart cooking timer application for Android and iOS
+                devices.
+            </p>
+
+            <div class="callout">
+                <p>
+                    <strong>Offline-First Principle:</strong> PR Recipe Hub is architected with a strict <em>
+                        offline-first
+                        privacy foundation
+                    </em>. Your personal recipes, saved favorites, grocery shopping lists, weekly meal
+                    calendars, custom tags, and pantry stock are saved exclusively on your local device. We do not maintain user
+                    accounts, require logins, or store your private culinary data on remote cloud databases.
+                </p>
+            </div>
+
+            <p>
+                By installing, accessing, or using the PR Recipe Hub mobile application (the "Application"), you acknowledge
+                and agree to the data collection and usage practices described in this Privacy Policy.
+            </p>
+        </section>
+
+        <!-- Section 2: Data Collection & Storage -->
+        <section id="data-collection" class="card">
+            <h2><span class="icon">💾</span> 2. Information Collection & Storage Architecture</h2>
+
+            <h3>A. Local Device Storage (AsyncStorage)</h3>
+            <p>All user-generated activities and customizations remain 100% on your device, including:</p>
+            <ul>
+                <li><strong>Favorite & Custom Recipe Bookmarks:</strong> Your saved culinary collections.</li>
+                <li><strong>Pantry Inventory:</strong> Stock levels, ingredient names, and categories you manage.</li>
+                <li><strong>Weekly Meal Planner:</strong> Breakfast, lunch, dinner, and snack meal schedules.</li>
+                <li><strong>Smart Grocery Shopping List:</strong> Merged ingredient quantities and item check states.</li>
+                <li>
+                    <strong>Dietary & Allergy Preferences:</strong> Vegetarian/vegan preferences, allergy exclusions, and
+                    metric/imperial measurement selections.
+                </li>
+                <li><strong>Cooking History & Notes:</strong> Timers, step completions, and custom notes.</li>
+            </ul>
+
+            <h3>B. Public Recipe Data API (TheMealDB) & CDN Images</h3>
+            <p>
+                The Application fetches public culinary recipes, category catalogs, and ingredient imagery from
+                <strong>TheMealDB API</strong> (<code>https://www.themealdb.com</code>) via secure HTTPS requests. No personal
+                identification data (PII) is transmitted in these requests.
+            </p>
+
+            <h3>C. Anonymous Diagnostics & Stability Metrics</h3>
+            <p>
+                To ensure high application reliability, non-identifying technical crash reports and system metrics (such as
+                operating system version, device model, and fatal error stack traces) may be processed transiently. These logs
+                contain no personal user data.
+            </p>
+        </section>
+
+        <!-- Section 3: Key Features & Data Handling -->
+        <section id="features-privacy" class="card">
+            <h2><span class="icon">⚙️</span> 3. Specific Feature Privacy Protections</h2>
+
+            <h3>A. 19-Language Localization & Dynamic Translation</h3>
+            <p>
+                PR Recipe Hub supports 19 languages (English, Hindi, Spanish, French, German, Japanese, Korean, Chinese,
+                Arabic, Portuguese, Italian, Dutch, Turkish, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada). Recipe
+                translation and dictionary lookups operate using locally bundled language dictionaries and client-side
+                translation caching without profiling your identity.
+            </p>
+
+            <h3>B. Smart Pantry Ingredient Matcher</h3>
+            <p>
+                The algorithmic matching engine that identifies recipes you can cook based on your available pantry items
+                executes entirely on your device's local CPU. No pantry ingredient inventories are uploaded to cloud servers.
+            </p>
+
+            <h3>C. Smart Local Notifications & Alarms</h3>
+            <p>
+                All reminders (meal prep alarms, breakfast/lunch/dinner scheduling, and cooking timer chimes) are scheduled
+                strictly through local device notification queues. We do not operate remote push servers or track notification
+                engagement for advertising profiling.
+            </p>
+
+            <h3>D. Cooking Mode & Screen Keep-Awake</h3>
+            <p>
+                During active step-by-step cooking, the app may request temporary screen-wake locks to keep your recipe visible
+                while your hands are busy. No ambient audio or visual recordings are captured during cooking sessions.
+            </p>
+        </section>
+
+        <!-- Section 4: Advertising & AdMob -->
+        <section id="monetization" class="card">
+            <h2><span class="icon">📢</span> 4. Advertising & Third-Party SDKs (Google AdMob)</h2>
+            <p>
+                To support ongoing development and keep PR Recipe Hub free for users worldwide, the Application displays
+                advertisements through <strong>Google AdMob</strong> and authorized partner networks.
+            </p>
+
+            <h3>A. Google Ad Formats Served</h3>
+            <ul>
+                <li><strong>Adaptive Banners:</strong> Non-intrusive banner displays positioned at the screen bottom.</li>
+                <li><strong>Native Ad Cards:</strong> Contextually styled recipe recommendation cards in browse feeds.</li>
+                <li><strong>Interstitial Ads:</strong> Natural transition ads displayed between screen navigations.</li>
+                <li><strong>Rewarded Video Ads:</strong> Optional user-initiated ads that unlock bonus culinary features.</li>
+            </ul>
+
+            <h3>B. Google User Messaging Platform (UMP) & GDPR/CCPA Compliance</h3>
+            <ul>
+                <li>
+                    <strong>EEA / UK Consent:</strong> For users in the European Economic Area and UK, explicit consent for
+                    personalized ads is gathered via the certified Google UMP dialog before ads are requested.
+                </li>
+                <li>
+                    <strong>US State Privacy (CCPA/CPRA):</strong> California and other applicable US residents can opt out of
+                    personalized ad targeting at any time.
+                </li>
+                <li>
+                    <strong>In-App Consent Controls:</strong> You can review, update, or revoke advertising preferences at any
+                    time under <em>Settings &gt; Security &amp; Privacy &gt; Monetization &amp; Ad Preferences</em>.
+                </li>
+                <li>
+                    <strong>Non-Personalized Ads:</strong> If you decline personalized advertising, Google AdMob serves
+                    contextual ads that do not use cookies or mobile advertising IDs for user profiling.
+                </li>
+            </ul>
+
+            <div class="callout callout-warning">
+                <p>
+                    <strong>Safety Context Protection:</strong> PR Recipe Hub enforces strict safety rules that block
+                    interstitial ads during active Cooking Mode, active countdown timers, and kitchen safety sessions to prevent
+                    distraction during hot meal preparation.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Section 5: Children's Privacy -->
+        <section id="children" class="card">
+            <h2><span class="icon">👶</span> 5. Children's Privacy & COPPA Compliance</h2>
+            <p>
+                PR Recipe Hub is designed for a general audience and strictly complies with the <strong>
+                    Google Play Families
+                    Policy
+                </strong> and the <strong>Children's Online Privacy Protection Act (COPPA)</strong>:
+            </p>
+            <ul>
+                <li>
+                    <strong>Child-Directed Treatment Tag:</strong> The app includes a "Child-Directed Treatment" toggle under
+                    privacy settings that configures the Google AdMob SDK to disable interest-based ads and remarketing.
+                </li>
+                <li>
+                    <strong>No Data Collection on Minors:</strong> We do not knowingly collect, store, or solicit personal
+                    information from children under the age of 13. If you believe a child has provided us with personal
+                    information, please contact us immediately for removal.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section 6: App Permissions -->
+        <section id="permissions" class="card">
+            <h2><span class="icon">🔑</span> 6. System Permissions Requested</h2>
+            <p>
+                PR Recipe Hub requests only the minimal set of operating system permissions required for core culinary
+                features:
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Permission</th>
+                            <th>Platform</th>
+                            <th>Technical Purpose & Necessity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>INTERNET</code></td>
+                            <td>Android</td>
+                            <td>Fetches public recipes, category data, and displays sponsor ads via Google AdMob.</td>
+                        </tr>
+                        <tr>
+                            <td><code>ACCESS_NETWORK_STATE</code></td>
+                            <td>Android</td>
+                            <td>Detects online/offline connectivity to activate local offline recipe caching.</td>
+                        </tr>
+                        <tr>
+                            <td><code>POST_NOTIFICATIONS</code></td>
+                            <td>Android 13+</td>
+                            <td>Delivers local cooking timer alerts and user-scheduled meal reminders.</td>
+                        </tr>
+                        <tr>
+                            <td><code>VIBRATE</code></td>
+                            <td>Android</td>
+                            <td>Provides tactile feedback when a cooking timer completes.</td>
+                        </tr>
+                        <tr>
+                            <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+                            <td>Android</td>
+                            <td>Restores user-scheduled local meal reminders after a device reboot.</td>
+                        </tr>
+                        <tr>
+                            <td><code>com.google.android.gms.permission.AD_ID</code></td>
+                            <td>Android</td>
+                            <td>Permits Google AdMob to deliver relevant advertisements in compliance with Google Play policy.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                <strong>Sensitive Permissions Not Requested:</strong> We do <em>not</em> request or require access to your
+                camera, microphone, device contacts, fine/coarse GPS location, or personal photo library.
+            </p>
+        </section>
+
+        <!-- Section 7: User Rights & Data Portability -->
+        <section id="rights" class="card">
+            <h2><span class="icon">⚖️</span> 7. User Rights, Data Portability & Deletion</h2>
+            <p>
+                In accordance with global privacy regulations (including GDPR, CCPA/CPRA, and LGPD), you have complete control
+                over your data:
+            </p>
+            <ul>
+                <li>
+                    <strong>Data Portability & Export:</strong> You can export a comprehensive JSON archive containing all your
+                    saved favorites, weekly meal plans, pantry inventory, and shopping lists at any time via <em>
+                        Settings &gt;
+                        Storage &amp; Privacy &gt; Export Backup
+                    </em>.
+                </li>
+                <li>
+                    <strong>Cache Clearance:</strong> You can clear cached recipe images and network payloads without losing
+                    your custom favorites.
+                </li>
+                <li>
+                    <strong>Complete Data Erasure (Factory Reset):</strong> You can wipe all locally stored application data
+                    instantly using the <em>Clear All Data</em> button in settings.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section 8: Contact Information -->
+        <section id="contact" class="card">
+            <h2><span class="icon">📬</span> 8. Contact Information & Policy Updates</h2>
+            <p>
+                We may update this Privacy Policy periodically to reflect new features, SDK upgrades, or regulatory
+                requirements. Any modifications will be posted to this page with an updated Effective Date.
+            </p>
+
+            <div class="contact-card">
+                <h3 style="margin-top: 0; color: #FFFFFF;">PR Recipe Hub Privacy & Support Team</h3>
+                <p>
+                    If you have any questions, suggestions, or data requests regarding this Privacy Policy, please contact our
+                    team:
+                </p>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);">Email Support</div>
+                            <a href="mailto:prrecipehub@gmail.com">prrecipehub@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🌐</span>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);">Live Policy Webpage</div>
+                            <a href="https://gausairavi.github.io/prrecipehub-privacypolicy/privacy-policy.html" target="_blank"
+                               rel="noopener">Privacy Portal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 PR Recipe Hub. All rights reserved. Built with ❤️ for home chefs worldwide.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
