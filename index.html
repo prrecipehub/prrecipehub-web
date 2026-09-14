@@ -69,11 +69,16 @@
             --badge-text: #E65100;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
             transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
         }
 
@@ -216,6 +221,103 @@
         .theme-toggle-btn:hover {
             border-color: var(--primary);
             color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .mobile-nav-drawer {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            padding: 16px 20px 28px;
+            z-index: 999;
+            transform: translateY(-8px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            max-height: calc(100vh - 70px);
+            overflow-y: auto;
+        }
+
+        .mobile-nav-drawer.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 15px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .mobile-nav-link i {
+            width: 20px;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link:active {
+            background: var(--badge-bg);
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .mobile-nav-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .mobile-download-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 13px 20px;
+            font-size: 15px;
         }
 
         .btn-primary {
@@ -1101,11 +1203,14 @@
             font-size: 13.5px;
         }
 
-        /* Responsive Queries */
+        /* ── Responsive Queries ──────────────────────────────────────────────────── */
+
+        /* Tablets & Medium Screens (<= 1024px) */
         @media (max-width: 1024px) {
             .hero-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 40px;
             }
 
             .hero-desc {
@@ -1119,23 +1224,30 @@
             .stats-row {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 24px;
+                max-width: 500px;
+                margin: 0 auto;
             }
 
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .categories-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .testimonials-grid {
                 grid-template-columns: 1fr;
+                max-width: 650px;
+                margin: 0 auto;
             }
 
             .cta-banner {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 48px 36px;
             }
 
             .cta-banner p {
@@ -1148,41 +1260,453 @@
 
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 36px;
             }
         }
 
-        @media (max-width: 640px) {
+        /* Small Tablets & Large Phones (<= 768px) */
+        @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
 
+            .mobile-menu-btn {
+                display: inline-flex;
+            }
+
+            .mobile-nav-drawer {
+                display: block;
+            }
+
+            .hero-section {
+                padding: 40px 0 60px;
+            }
+
             .hero-title {
-                font-size: 38px;
+                font-size: clamp(32px, 7vw, 44px);
+                letter-spacing: -1px;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+            .features-section,
+            .categories-section,
+            .testimonials-section,
+            .faq-section,
+            .download-cta-section {
+                padding: 60px 0;
             }
 
-            .categories-grid {
-                grid-template-columns: 1fr;
+            .section-title-wrap {
+                margin-bottom: 40px;
             }
 
-            .pantry-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: clamp(26px, 6vw, 34px);
+            }
+
+            .section-desc {
+                font-size: 15.5px;
+            }
+        }
+
+        /* Standard Mobile Viewports (<= 640px) */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .nav-wrap {
+                height: 68px;
+            }
+
+            .header-logo-img {
+                height: 46px;
+            }
+
+            .nav-actions {
+                gap: 10px;
+            }
+
+            .header-cta-btn {
+                padding: 9px 14px;
+                font-size: 13px;
+                border-radius: 10px;
+            }
+
+            .header-cta-text {
+                display: none;
+            }
+
+            /* Hero adjustments */
+            .pill-badge {
+                font-size: 12px;
+                padding: 6px 14px;
+                margin-bottom: 18px;
+            }
+
+            .hero-title {
+                font-size: clamp(28px, 8vw, 38px);
+                line-height: 1.18;
+                margin-bottom: 16px;
+            }
+
+            .hero-desc {
+                font-size: 15.5px;
+                margin-bottom: 28px;
+            }
+
+            .hero-cta-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto 36px;
+            }
+
+            .store-badge-btn,
+            .hero-cta-row .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
             }
 
             .stats-row {
                 grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                padding-top: 20px;
+            }
+
+            .stat-item h3 {
+                font-size: 24px;
+            }
+
+            .stat-item p {
+                font-size: 12.5px;
+            }
+
+            /* Responsive Phone Mockup & Floating Badges */
+            .hero-phone-wrap {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .phone-frame {
+                width: 100%;
+                max-width: 290px;
+                height: 560px;
+                border-width: 8px;
+                border-radius: 40px;
+            }
+
+            .floating-card-badge {
+                padding: 8px 12px;
+                border-radius: 12px;
+                gap: 8px;
+            }
+
+            .float-card-1 {
+                top: 5%;
+                left: 0;
+                transform: scale(0.88);
+                transform-origin: top left;
+            }
+
+            .float-card-2 {
+                bottom: 8%;
+                right: 0;
+                transform: scale(0.88);
+                transform-origin: bottom right;
+            }
+
+            .hero-carousel-controls {
+                margin-top: 22px;
+                gap: 14px;
+            }
+
+            .hero-nav-arrow {
+                width: 38px;
+                height: 38px;
+                font-size: 13px;
+            }
+
+            /* Interactive Live Demo */
+            .interactive-section {
+                padding: 50px 0;
+            }
+
+            .demo-tab-nav {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 8px;
+                margin-bottom: 24px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 8px;
+            }
+
+            .demo-tab-nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .demo-tab-btn {
+                flex-shrink: 0;
+                padding: 10px 16px;
+                font-size: 13.5px;
+                white-space: nowrap;
+            }
+
+            .demo-container {
+                padding: 20px 14px;
+                border-radius: 18px;
+            }
+
+            .pantry-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .pantry-chip {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
+
+            .recipe-match-card {
+                padding: 12px 14px;
+                gap: 12px;
+                border-radius: 14px;
+            }
+
+            .match-img {
+                width: 64px;
+                height: 64px;
+                border-radius: 10px;
+                flex-shrink: 0;
+            }
+
+            .recipe-match-card h4 {
+                font-size: 15.5px !important;
+            }
+
+            .match-percent {
+                font-size: 11px;
+                padding: 3px 8px;
+            }
+
+            .lang-btn-grid {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+
+            .lang-pill-btn {
+                padding: 8px 10px;
+                font-size: 12.5px;
+            }
+
+            .recipe-demo-box {
+                padding: 18px 14px;
+                border-radius: 14px;
+            }
+
+            #demoRecipeTitle {
+                font-size: 20px !important;
+            }
+
+            .step-demo-row {
+                padding: 10px 12px;
+                gap: 10px;
+                border-radius: 10px;
+            }
+
+            .step-badge-num {
+                width: 24px;
+                height: 24px;
+                font-size: 11px;
+            }
+
+            #demoStepsList div[id^="demoStep"] {
+                font-size: 13px !important;
+            }
+
+            #timerDisplay {
+                font-size: clamp(42px, 13vw, 56px) !important;
+            }
+
+            /* Features Grid */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .feature-card {
+                padding: 22px 20px;
+                border-radius: 18px;
+            }
+
+            .feature-icon-box {
+                width: 50px;
+                height: 50px;
+                border-radius: 14px;
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+
+            /* Categories Grid on Mobile (2 cols for >= 440px, 1 col for < 440px) */
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .category-card {
+                border-radius: 16px;
+            }
+
+            .cat-img-wrap {
+                height: 140px;
+            }
+
+            .cat-content {
+                padding: 14px 16px;
+            }
+
+            /* Testimonials & FAQ */
+            .testi-card {
+                padding: 22px 18px;
+                border-radius: 16px;
+            }
+
+            .testi-text {
+                font-size: 14.5px;
+            }
+
+            .faq-question {
+                padding: 18px 20px;
+                font-size: 15.5px;
+            }
+
+            .faq-answer {
+                padding: 0 20px 18px;
+                font-size: 14.5px;
+            }
+
+            /* CTA Banner */
+            .cta-banner {
+                padding: 36px 20px;
+                border-radius: 24px;
+                gap: 28px;
+            }
+
+            .cta-banner h2 {
+                font-size: clamp(22px, 6vw, 28px);
+                margin-bottom: 12px;
+            }
+
+            .cta-banner p {
+                font-size: 14.5px;
+                margin-bottom: 24px;
+            }
+
+            .cta-btns {
+                width: 100%;
+            }
+
+            .cta-btns .store-badge-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Footer */
+            footer {
+                padding: 48px 0 24px;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 28px;
+                margin-bottom: 36px;
             }
 
             .footer-bottom {
                 flex-direction: column;
+                text-align: center;
                 gap: 12px;
+            }
+        }
+
+        /* 2-Column Categories for Medium Mobile Phones */
+        @media (min-width: 440px) and (max-width: 640px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .cat-img-wrap {
+                height: 125px;
+            }
+
+            .cat-content {
+                padding: 12px;
+            }
+
+            .cat-title {
+                font-size: 15px;
+            }
+
+            .cat-desc {
+                font-size: 12px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+
+        /* Compact Mobile Viewports (<= 380px: iPhone SE, Galaxy Fold cover) */
+        @media (max-width: 380px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .header-logo-img {
+                height: 40px;
+            }
+
+            .phone-frame {
+                max-width: 255px;
+                height: 490px;
+                border-width: 6px;
+                border-radius: 32px;
+            }
+
+            .float-card-1 {
+                top: 2%;
+                left: -6px;
+                transform: scale(0.76);
+            }
+
+            .float-card-2 {
+                bottom: 4%;
+                right: -6px;
+                transform: scale(0.76);
+            }
+
+            .stat-item h3 {
+                font-size: 20px;
+            }
+
+            .stat-item p {
+                font-size: 11px;
+            }
+
+            .lang-btn-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pantry-chip {
+                padding: 6px 10px;
+                font-size: 12px;
             }
         }
     </style>
@@ -1214,8 +1738,28 @@
                 <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
                     <i class="fa-solid fa-sun" id="themeIcon"></i>
                 </button>
-                <a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener" class="btn-primary">
-                    <i class="fa-brands fa-google-play"></i> Get App Free
+                <a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener" class="btn-primary header-cta-btn">
+                    <i class="fa-brands fa-google-play"></i> <span class="header-cta-text">Get App Free</span>
+                </a>
+                <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars" id="mobileMenuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true">
+            <ul class="mobile-nav-links">
+                <li><a href="#features" class="mobile-nav-link" onclick="closeMobileMenu()"><i class="fa-solid fa-wand-magic-sparkles"></i> Features</a></li>
+                <li><a href="#interactive-demo" class="mobile-nav-link" onclick="closeMobileMenu()"><i class="fa-solid fa-flask"></i> Interactive Demo</a></li>
+                <li><a href="#categories" class="mobile-nav-link" onclick="closeMobileMenu()"><i class="fa-solid fa-utensils"></i> Categories</a></li>
+                <li><a href="#languages" class="mobile-nav-link" onclick="goToLanguages(event); closeMobileMenu();"><i class="fa-solid fa-language"></i> 19 Languages</a></li>
+                <li><a href="#testimonials" class="mobile-nav-link" onclick="closeMobileMenu()"><i class="fa-solid fa-star"></i> Reviews</a></li>
+                <li><a href="#faq" class="mobile-nav-link" onclick="closeMobileMenu()"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener" class="btn-primary mobile-download-btn">
+                    <i class="fa-brands fa-google-play"></i> Download Free on Google Play
                 </a>
             </div>
         </div>
@@ -2422,6 +2966,70 @@
             heroEl.addEventListener('mouseleave', startHeroAutoSlide);
         }
         startHeroAutoSlide();
+
+        // 9. Mobile Navigation Drawer Controls
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+        const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+        function toggleMobileMenu() {
+            if (!mobileNavDrawer) return;
+            const isOpen = mobileNavDrawer.classList.contains('open');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+
+        function openMobileMenu() {
+            if (!mobileNavDrawer) return;
+            mobileNavDrawer.classList.add('open');
+            mobileNavDrawer.setAttribute('aria-hidden', 'false');
+            if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            if (mobileMenuIcon) {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-xmark');
+            }
+        }
+
+        function closeMobileMenu() {
+            if (!mobileNavDrawer) return;
+            mobileNavDrawer.classList.remove('open');
+            mobileNavDrawer.setAttribute('aria-hidden', 'true');
+            if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            if (mobileMenuIcon) {
+                mobileMenuIcon.classList.remove('fa-xmark');
+                mobileMenuIcon.classList.add('fa-bars');
+            }
+        }
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Close drawer on clicking outside
+        document.addEventListener('click', (e) => {
+            if (mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
+                if (!mobileNavDrawer.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Auto close on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
     </script>
 </body>
 
